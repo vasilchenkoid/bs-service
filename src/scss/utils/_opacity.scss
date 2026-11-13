@@ -1,0 +1,17 @@
+.opacity {
+	@each $o-key, $o-val in $opacity {
+		&-#{$o-key} {
+			opacity: var(--#{$prefix}-opacity-#{$o-key}) !important;
+		}
+	}
+
+	@each $g-key, $g-val in $grid {
+		@media (width >= #{map-get($g-val,breakpoint)}) {
+			@each $o-key, $o-val in $opacity {
+				&-#{$g-key}-#{$o-key} {
+					opacity: var(--#{$prefix}-opacity-#{$o-key}) !important;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,38 @@
+@mixin header-footer() {
+	.container,
+	.container-fluid {
+		@include flex-center(row);
+		justify-content: space-between;
+	}
+
+	&-section {
+		@include flex(row);
+		align-items: center;
+	}
+
+	&-brand {
+		@include flex(row, var(--#{$prefix}-space-inner-2));
+		align-items: center;
+		width: auto;
+		max-height: var(--#{$prefix}-size-comp-height-md);
+		@include typography(heading);
+		@include typography-size(heading, h3);
+		text-decoration: none;
+		white-space: nowrap;
+
+		* {
+			width: auto;
+			max-height: var(--#{$prefix}-size-comp-height-md);
+		}
+	}
+
+	&-form,
+	&-actions {
+		@include flex(row, var(--#{$prefix}-space-inner-2));
+		align-items: center;
+	}
+
+	&-text {
+		color: var(--#{$prefix}-color-text-primary-label);
+	}
+}

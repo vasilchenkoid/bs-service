@@ -1,0 +1,14 @@
+.fieldset {
+	@include flex(column);
+	width: 100%;
+	padding: var(--#{$prefix}-grid-gutter-default);
+	border-radius: var(--#{$prefix}-border-radius-3);
+	border: 1px solid var(--#{$prefix}-color-theme-base-border);
+
+	legend,
+	.legend {
+		margin-inline: calc(-1 * var(--#{$prefix}-space-inner-2));
+		padding-inline: var(--#{$prefix}-space-inner-2);
+		@include typography(body, true);
+	}
+}

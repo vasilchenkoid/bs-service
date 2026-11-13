@@ -1,0 +1,206 @@
+.tooltip {
+	position: relative;
+
+	&-content {
+		position: absolute;
+		inset: auto auto calc(100% + var(--#{$prefix}-space-inner-2)) 50%;
+		transform: translate(-50%, 0);
+		@include flex(row, var(--#{$prefix}-space-inner-2));
+		align-items: center;
+		width: max-content;
+		max-width: var(--#{$prefix}-size-comp-width-xs);
+		padding: var(--#{$prefix}-space-inner-1) var(--#{$prefix}-space-inner-3);
+		border-radius: var(--#{$prefix}-border-radius-1);
+		background-color: var(--#{$prefix}-color-theme-base-default);
+		color: var(--#{$prefix}-color-text-inverse-main);
+		@include typography(body);
+		@include typography-size(body, main);
+		text-align: center;
+		pointer-events: none;
+		z-index: var(--#{$prefix}-z-index-tooltip);
+		opacity: 0;
+
+		&::after {
+			content: '';
+			position: absolute;
+			inset: 100% auto auto 50%;
+			transform: translate(-50%, 0);
+			flex-shrink: 0;
+			display: block;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 0.375rem 0.375rem 0 0.375rem;
+			border-color: var(--#{$prefix}-color-theme-base-default) transparent transparent transparent;
+		}
+	}
+
+	&:hover &-content,
+	&:focus &-content {
+		opacity: 1;
+	}
+
+	&.drop-up &-content {
+		inset: auto auto calc(100% + var(--#{$prefix}-space-inner-2)) 50%;
+		transform: translate(-50%, 0);
+
+		&::after {
+			inset: 100% auto auto 50%;
+			transform: translate(-50%, 0);
+		}
+	}
+
+	&.drop-up-right &-content {
+		inset: auto auto calc(100% + var(--#{$prefix}-space-inner-2)) 0;
+		transform: translate(0);
+
+		&::after {
+			inset: 100% auto auto var(--#{$prefix}-space-inner-2);
+			transform: translate(0);
+		}
+	}
+
+	&.drop-up-left &-content {
+		inset: auto 0 calc(100% + var(--#{$prefix}-space-inner-2)) auto;
+		transform: translate(0);
+
+		&::after {
+			inset: 100% var(--#{$prefix}-space-inner-2) auto auto;
+			transform: translate(0);
+		}
+	}
+
+	&[class*='drop-up'] &-content::after {
+		border-width: 0.375rem 0.375rem 0 0.375rem;
+		border-color: var(--#{$prefix}-color-theme-base-default) transparent transparent transparent;
+	}
+
+	&.drop-down &-content {
+		inset: calc(100% + var(--#{$prefix}-space-inner-2)) auto auto 50%;
+		transform: translate(-50%, 0);
+
+		&::after {
+			inset: auto auto 100% 50%;
+			transform: translate(-50%, 0);
+		}
+	}
+
+	&.drop-down-right &-content {
+		inset: calc(100% + var(--#{$prefix}-space-inner-2)) auto auto 0;
+		transform: translate(0);
+
+		&::after {
+			inset: auto auto 100% var(--#{$prefix}-space-inner-2);
+			transform: translate(0);
+		}
+	}
+
+	&.drop-down-left &-content {
+		inset: calc(100% + var(--#{$prefix}-space-inner-2)) 0 auto auto;
+		transform: translate(0);
+
+		&::after {
+			inset: auto var(--#{$prefix}-space-inner-2) 100% auto;
+			transform: translate(0);
+		}
+	}
+
+	&[class*='drop-down'] &-content::after {
+		border-width: 0 0.375rem 0.375rem 0.375rem;
+		border-color: transparent transparent var(--#{$prefix}-color-theme-base-default) transparent;
+	}
+
+	&.drop-right &-content {
+		inset: auto auto 50% calc(100% + var(--#{$prefix}-space-inner-2));
+		transform: translate(0, 50%);
+
+		&::after {
+			inset: auto 100% 50% auto;
+			transform: translate(0, 50%);
+		}
+	}
+
+	&.drop-right-up &-content {
+		inset: auto auto 0 calc(100% + var(--#{$prefix}-space-inner-2));
+		transform: translate(0);
+
+		&::after {
+			inset: auto 100% var(--#{$prefix}-space-inner-2) auto;
+			transform: translate(0);
+		}
+	}
+
+	&.drop-right-down &-content {
+		inset: 0 auto auto calc(100% + var(--#{$prefix}-space-inner-2));
+		transform: translate(0);
+
+		&::after {
+			inset: var(--#{$prefix}-space-inner-2) 100% auto auto;
+			transform: translate(0);
+		}
+	}
+
+	&[class*='drop-right'] &-content::after {
+		border-width: 0.375rem 0.375rem 0.375rem 0;
+		border-color: transparent var(--#{$prefix}-color-theme-base-default) transparent transparent;
+	}
+
+	&.drop-left &-content {
+		inset: auto calc(100% + var(--#{$prefix}-space-inner-2)) 50% auto;
+		transform: translate(0, 50%);
+
+		&::after {
+			inset: auto auto 50% 100%;
+			transform: translate(0, 50%);
+		}
+	}
+
+	&.drop-left-up &-content {
+		inset: auto calc(100% + var(--#{$prefix}-space-inner-2)) 0 auto;
+		transform: translate(0);
+
+		&::after {
+			inset: auto auto var(--#{$prefix}-space-inner-2) 100%;
+			transform: translate(0);
+		}
+	}
+
+	&.drop-left-down &-content {
+		inset: 0 calc(100% + var(--#{$prefix}-space-inner-2)) auto auto;
+		transform: translate(0);
+
+		&::after {
+			inset: var(--#{$prefix}-space-inner-2) auto auto 100%;
+			transform: translate(0);
+		}
+	}
+
+	&[class*='drop-left'] &-content::after {
+		border-width: 0.375rem 0 0.375rem 0.375rem;
+		border-color: transparent transparent transparent var(--#{$prefix}-color-theme-base-default);
+	}
+
+	@each $key, $val in map-get($colors,theme) {
+		&-#{$key} &-content {
+			background-color: var(--#{$prefix}-color-theme-#{$key}-default);
+			color: foreground(map-get($val, default, foreground));
+		}
+
+		&-#{$key} &-content::after,
+		&-#{$key}[class*='drop-up'] &-content::after {
+			border-color: var(--#{$prefix}-color-theme-#{$key}-default) transparent transparent transparent;
+		}
+
+		&-#{$key}[class*='drop-down'] &-content::after {
+			border-color: transparent transparent var(--#{$prefix}-color-theme-#{$key}-default) transparent;
+		}
+
+		&-#{$key}[class*='drop-right'] &-content::after {
+			border-color: transparent var(--#{$prefix}-color-theme-#{$key}-default) transparent transparent;
+		}
+
+		&-#{$key}[class*='drop-left'] &-content::after {
+			border-color: transparent transparent transparent var(--#{$prefix}-color-theme-#{$key}-default);
+		}
+	}
+}

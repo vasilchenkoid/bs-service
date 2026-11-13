@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/lorvin.min.css">
+	<title>app - lorvin</title>
+</head>
+<body class="bg-surface-secondary">
+	<div class="app-layout">
+		<nav class="app-nav bg-surface-primary shadow-level-3">
+			<a class="app-nav-brand d-none d-sm-flex" href="index.html">
+				<img src="img/logo.svg">
+				<span class=" d-none d-md-flex">Lorvin</span>
+			</a>
+
+			<form class="app-nav-form d-none d-md-flex">
+				<input class="input" type="search" placeholder="Search">
+			</form>
+
+			<div class="app-nav-menu">
+				<a class="app-nav-item active" href="">
+					<span class="icon">star</span>
+					<span>Home</span>
+				</a>
+				<a class="app-nav-item" href="">
+					<span class="icon">star</span>
+					<span>About</span>
+				</a>
+				<a class="app-nav-item" href="">
+					<span class="icon">star</span>
+					<span>Contact</span>
+				</a>
+			</div>
+
+			<div class="app-nav-actions d-none d-md-flex">
+				<button class="btn btn-outline-primary">
+					<span class="icon">star</span>
+					<span>Hello</span>
+				</button>
+				<button class="btn btn-solid-primary">
+					<span class="icon">star</span>
+					<span>How are you?</span>
+				</button>
+			</div>
+
+			<span class="app-nav-text d-none d-md-block">Copyright, 2023</span>
+
+			<!-- <label class="app-nav-toggle">
+				<input class="app-nav-toggle-checkbox" type="checkbox">
+				<span class="app-nav-toggle-label"></span>
+				<span class="app-nav-toggle-icon icon"></span>
+			</label> -->
+		</nav>
+
+		<main class="main">
+			<header class="header position-sticky-top bg-surface-primary shadow-level-3">
+				<div class="container-fluid">
+					<div class="header-section">
+						<a class="header-brand" href="index.html">
+							<img src="img/logo.svg">
+							<span>Lorvin</span>
+						</a>
+
+						<!-- <form class="header-form">
+							<input class="input" type="search" placeholder="Search">
+						</form> -->
+					</div>
+
+					<div class="header-section">
+						<div class="header-actions">
+							<button class="btn btn-outline-primary">
+								<span class="icon">star</span>
+								<span>Hello</span>
+							</button>
+							<button class="btn btn-solid-primary">
+								<span class="icon">star</span>
+								<span>How are you?</span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</header>
+
+			<section class="section section-hero">
+				<div class="container-fluid">
+					<div class="row align-items-center">
+						<div class="col-7 flex-col align-items-start gap-6">
+							<h1 class="text-style-display-h1">Lorem ipsum dolor sit <mark>amet</mark></h1>
+							<p class="text-style-body-main-bolder color-label">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+							<button class="btn btn-solid">Hello</button>
+
+							<button class="btn btn-solid btn-icon dropdown">
+								<!-- <i class="icon">star</i>
+								<span>Dropdown</span> -->
+
+								<div class="dropdown-menu">
+									<a href="#" class="dropdown-item">
+										<i class="icon">star</i>
+										<span>Hello</span>
+									</a>
+									<a href="#" class="dropdown-item">
+										<i class="icon">star</i>
+										<span>And</span>
+									</a>
+									<a href="#" class="dropdown-item">
+										<i class="icon">star</i>
+										<span>Lets go</span>
+									</a>
+								</div>
+							</button>
+						</div>
+						<div class="col">
+							<img class="hero-image">
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="section">
+				<div class="container-fluid">
+					<h2>Section</h2>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, odit repudiandae ipsa, velit, fuga eligendi cumque adipisci rem sequi optio aliquam unde. Excepturi eveniet deserunt iste placeat perspiciatis, eligendi aut?</p>
+
+					<div class="nav">
+						<a href="" class="nav-item active">
+							<span class="icon">star</span>
+							<span>Home</span>
+						</a>
+						<a href="" class="nav-item">
+							<span class="icon">star</span>
+							<span>About</span>
+						</a>
+						<a href="" class="nav-item">
+							<span class="icon">star</span>
+							<span>Contacts</span>
+						</a>
+					</div>
+
+					<form class="form">
+						<div class="row">
+							<div class="col">
+								<fieldset class="fieldset">
+									<legend>Block</legend>
+									<div class="form-field">
+										<label class="label">Field</label>
+										<input class="input input-color" type="color" />
+									</div>
+									<div class="form-field">
+										<label class="label">Field</label>
+										<input class="input" type="text" placeholder="Input" />
+									</div>
+									<textarea class="input" placeholder="Textarea"></textarea>
+									<select class="input">
+										<option value="1">One</option>
+										<option value="2">Two</option>
+										<option value="3">Three</option>
+									</select>
+									<div class="flex-row align-items-center gap-2">
+										<input class="checkbox" id="check" type="checkbox">
+										<label for="check">Checkbox</label>
+									</div>
+									<div class="flex-row align-items-center gap-2">
+										<input class="radio" id="radio" type="radio">
+										<label for="radio">Checkbox</label>
+									</div>
+									<input class="range" type="range">
+									<a class="btn btn-solid-primary" href="">
+										<span class="icon">star</span>
+										<span>Add</span>
+									</a>
+								</fieldset>
+							</div>
+							<div class="col">
+								<fieldset class="fieldset">
+									<legend>Block</legend>
+									<div class="form-field">
+										<label class="label">Field</label>
+										<input class="input input-color" type="color" />
+									</div>
+									<div class="form-field">
+										<label class="label">Field</label>
+										<input class="input" type="text" placeholder="Input" />
+									</div>
+									<textarea class="input" placeholder="Textarea"></textarea>
+									<select class="input">
+										<option value="1">One</option>
+										<option value="2">Two</option>
+										<option value="3">Three</option>
+									</select>
+									<div class="flex-row align-items-center gap-2">
+										<input class="checkbox" id="check" type="checkbox">
+										<label for="check">Checkbox</label>
+									</div>
+									<div class="flex-row align-items-center gap-2">
+										<input class="radio" id="radio" type="radio">
+										<label for="radio">Checkbox</label>
+									</div>
+									<input class="range" type="range">
+								</fieldset>
+							</div>
+						</div>
+					</form>
+				</div>
+			</section>
+
+			<footer class="footer bg-surface-secondary">
+				<div class="container-fluid">
+					<div class="footer-section">
+						<a class="footer-brand" href="index.html">
+							<img src="img/logo.svg">
+							<span>Lorvin</span>
+						</a>
+
+						<nav class="footer-nav">
+							<!-- <div class="footer-nav-toggle"></div> -->
+							<div class="footer-nav-menu">
+								<a class="footer-nav-item active" href="">
+									<span class="icon">star</span>
+									<span>Home</span>
+								</a>
+								<a class="footer-nav-item" href="">
+									<span class="icon">star</span>
+									<span>About</span>
+								</a>
+								<a class="footer-nav-item" href="">
+									<span class="icon">star</span>
+									<span>Contact</span>
+								</a>
+							</div>
+						</nav>
+					</div>
+
+					<div class="footer-section">
+						<span class="footer-text">Copyright, 2023</span>
+					</div>
+				</div>
+			</footer>
+		</main>
+	</div>
+</body>
+</html>

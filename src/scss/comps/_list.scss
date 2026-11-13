@@ -1,0 +1,19 @@
+.list {
+	width: 100%;
+	padding-left: 0;
+	list-style: none;
+	overflow: hidden;
+
+	& > * {
+		padding: var(--#{$prefix}-space-inner-2) var(--#{$prefix}-space-inner-4);
+	}
+
+	& > *:not(:first-child) {
+		border-top: 1px solid var(--#{$prefix}-color-theme-base-border);
+	}
+
+	&-bordered {
+		border-radius: var(--#{$prefix}-border-radius-2);
+		border: 1px solid var(--#{$prefix}-color-theme-base-border);
+	}
+}

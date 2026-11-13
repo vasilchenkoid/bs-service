@@ -1,0 +1,47 @@
+.loader {
+	&::after {
+		content: '';
+		display: block;
+		width: var(--#{$prefix}-size-comp-height-xs);
+		height: var(--#{$prefix}-size-comp-height-xs);
+		border-radius: var(--#{$prefix}-border-radius-round);
+		border: 2px solid;
+		border-color: transparent var(--#{$prefix}-color-theme-base-default) var(--#{$prefix}-color-theme-base-default) var(--#{$prefix}-color-theme-base-default);
+		animation-name: loader-rotation;
+		animation-timing-function: linear;
+		animation-duration: 1s;
+		animation-delay: 0s;
+		animation-iteration-count: infinite;
+	}
+
+	&-tonal::after {
+		border-color: transparent var(--#{$prefix}-color-theme-base-disabled) var(--#{$prefix}-color-theme-base-disabled) var(--#{$prefix}-color-theme-base-disabled);
+	}
+
+	@each $key, $val in map-get($colors,theme) {
+		&-#{$key}::after {
+			border-color: transparent var(--#{$prefix}-color-theme-#{$key}-default) var(--#{$prefix}-color-theme-#{$key}-default) var(--#{$prefix}-color-theme-#{$key}-default);
+		}
+
+		&-#{$key}-tonal::after {
+			border-color: transparent var(--#{$prefix}-color-theme-#{$key}-disabled) var(--#{$prefix}-color-theme-#{$key}-disabled) var(--#{$prefix}-color-theme-#{$key}-disabled);
+		}
+	}
+
+	@each $key, $val in $comp-height {
+		&-#{$key}::after {
+			width: var(--#{$prefix}-size-comp-height-#{$key});
+			height: var(--#{$prefix}-size-comp-height-#{$key});
+		}
+	}
+}
+
+@-webkit-keyframes loader-rotation {
+	0%   { transform: rotate(0deg);   }
+	100% { transform: rotate(360deg); }
+}
+
+@keyframes loader-rotation {
+	0%   { transform: rotate(0deg);   }
+	100% { transform: rotate(360deg); }
+}

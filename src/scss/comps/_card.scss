@@ -1,0 +1,10 @@
+.card {
+	width: 100%;
+	border-radius: var(--#{$prefix}-border-radius-3);
+	overflow: hidden;
+
+	&-body {
+		@include flex(column, var(--#{$prefix}-space-inner-4));
+		padding: var(--#{$prefix}-grid-gutter-default);
+	}
+}

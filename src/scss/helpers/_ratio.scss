@@ -1,0 +1,7 @@
+.ratio {
+	@each $key, $val in $ratio {
+		&-#{$key} {
+			aspect-ratio: var(--#{$prefix}-ratio-#{$key});
+		}
+	}
+}

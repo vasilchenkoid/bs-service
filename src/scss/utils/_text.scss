@@ -1,0 +1,133 @@
+.text {
+	&-align {
+		&-left {
+			text-align: left !important;
+		}
+
+		&-right {
+			text-align: right !important;
+		}
+
+		&-center {
+			text-align: center !important;
+		}
+
+		@each $key, $val in $grid {
+			@media (width >= #{map-get($val,breakpoint)}) {
+				&-#{$key}-left {
+					text-align: left !important;
+				}
+		
+				&-#{$key}-right {
+					text-align: right !important;
+				}
+		
+				&-#{$key}-center {
+					text-align: center !important;
+				}
+			}
+		}
+	}
+
+	&-decoration {
+		&-none {
+			text-decoration: none !important;
+		}
+
+		&-underline {
+			text-decoration: underline !important;
+		}
+
+		&-line-through {
+			text-decoration: line-through !important;
+		}
+
+		@each $key, $val in $grid {
+			@media (width >= #{map-get($val,breakpoint)}) {
+				&-#{$key}-none {
+					text-decoration: none !important;
+				}
+		
+				&-#{$key}-underline {
+					text-decoration: underline !important;
+				}
+		
+				&-#{$key}-line-through {
+					text-decoration: line-through !important;
+				}
+			}
+		}
+	}
+
+	&-transform {
+		&-lowercase {
+			text-transform: lowercase !important;
+		}
+
+		&-uppercase {
+			text-transform: uppercase !important;
+		}
+
+		&-capitalize {
+			text-transform: capitalize !important;
+		}
+
+		@each $key, $val in $grid {
+			@media (width >= #{map-get($val,breakpoint)}) {
+				&-#{$key}-lowercase {
+					text-transform: lowercase !important;
+				}
+		
+				&-#{$key}-uppercase {
+					text-transform: uppercase !important;
+				}
+		
+				&-#{$key}-capitalize {
+					text-transform: capitalize !important;
+				}
+			}
+		}
+	}
+
+	&-wrap {
+		white-space: normal !important;
+	}
+
+	&-nowrap {
+		white-space: nowrap !important;
+	}
+
+	&-break {
+		overflow-wrap: break-word !important;
+		word-break: break-all !important;
+	}
+
+	&-truncate {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	@each $key, $val in $grid {
+		@media (width >= #{map-get($val,breakpoint)}) {
+			&-#{$key}-wrap {
+				white-space: normal !important;
+			}
+		
+			&-#{$key}-nowrap {
+				white-space: nowrap !important;
+			}
+		
+			&-#{$key}-break {
+				overflow-wrap: break-word !important;
+				word-break: break-all !important;
+			}
+		
+			&-#{$key}-truncate {
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+		}
+	}
+}

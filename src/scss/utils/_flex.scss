@@ -1,0 +1,327 @@
+.flex {
+
+	// direction
+
+	&-row {
+		display: flex !important;
+		flex-direction: row !important;
+	}
+
+	&-col {
+		display: flex !important;
+		flex-direction: column !important;
+	}
+
+	&-row-reverse {
+		display: flex !important;
+		flex-direction: row-reverse !important;
+	}
+
+	&-col-reverse {
+		display: flex !important;
+		flex-direction: column-reverse !important;
+	}
+
+	// wrap
+
+	&-wrap {
+		display: flex !important;
+		flex-wrap: wrap !important;
+	}
+
+	&-nowrap {
+		display: flex !important;
+		flex-wrap: nowrap !important;
+	}
+
+	&-wrap-reverse {
+		display: flex !important;
+		flex-wrap: wrap-reverse !important;
+	}
+
+	// grow
+
+	&-grow-0 {
+		flex-grow: 0 !important;
+	}
+
+	&-grow-1 {
+		flex-grow: 1 !important;
+	}
+
+	// shrink
+
+	&-shrink-0 {
+		flex-shrink: 0 !important;
+	}
+
+	&-shrink-1 {
+		flex-shrink: 1 !important;
+	}
+
+	// flex
+
+	&-fill {
+		flex: 1 1 auto !important;
+	}
+
+	// stacks
+
+	&-v-stack {
+		display: flex !important;
+		flex: 1 1 auto;
+		flex-direction: column;
+		align-self: stretch;
+	}
+
+	&-h-stack {
+		display: flex !important;
+		flex-direction: row;
+		align-items: center;
+		align-self: stretch;
+	}
+}
+
+.align {
+	&-self {
+		&-auto {
+			align-self: auto !important;
+		}
+
+		&-start {
+			align-self: flex-start !important;
+		}
+
+		&-end {
+			align-self: flex-end !important;
+		}
+
+		&-center {
+			align-self: center !important;
+		}
+
+		&-baseline {
+			align-self: baseline !important;
+		}
+
+		&-stretch {
+			align-self: stretch !important;
+		}
+
+		@each $key, $val in $grid {
+			@media (width >= #{map-get($val,breakpoint)}) {
+				&-#{$key}-auto {
+					align-self: auto !important;
+				}
+		
+				&-#{$key}-start {
+					align-self: flex-start !important;
+				}
+		
+				&-#{$key}-end {
+					align-self: flex-end !important;
+				}
+		
+				&-#{$key}-center {
+					align-self: center !important;
+				}
+		
+				&-#{$key}-baseline {
+					align-self: baseline !important;
+				}
+		
+				&-#{$key}-stretch {
+					align-self: stretch !important;
+				}
+			}
+		}
+	}
+
+	&-items {
+		&-start {
+			align-items: flex-start !important;
+		}
+
+		&-end {
+			align-items: flex-end !important;
+		}
+
+		&-center {
+			align-items: center !important;
+		}
+
+		&-baseline {
+			align-items: baseline !important;
+		}
+
+		&-stretch {
+			align-items: stretch !important;
+		}
+
+		@each $key, $val in $grid {
+			@media (width >= #{map-get($val,breakpoint)}) {
+				&-#{$key}-start {
+					align-items: flex-start !important;
+				}
+		
+				&-#{$key}-end {
+					align-items: flex-end !important;
+				}
+		
+				&-#{$key}-center {
+					align-items: center !important;
+				}
+		
+				&-#{$key}-baseline {
+					align-items: baseline !important;
+				}
+		
+				&-#{$key}-stretch {
+					align-items: stretch !important;
+				}
+			}
+		}
+	}
+
+	&-content {
+		&-start {
+			align-content: flex-start !important;
+		}
+
+		&-end {
+			align-content: flex-end !important;
+		}
+
+		&-center {
+			align-content: center !important;
+		}
+
+		&-between {
+			align-content: space-between !important;
+		}
+
+		&-around {
+			align-content: space-around !important;
+		}
+
+		&-stretch {
+			align-content: stretch !important;
+		}
+
+		@each $key, $val in $grid {
+			@media (width >= #{map-get($val,breakpoint)}) {
+				&-#{$key}-start {
+					align-content: flex-start !important;
+				}
+		
+				&-#{$key}-end {
+					align-content: flex-end !important;
+				}
+		
+				&-#{$key}-center {
+					align-content: center !important;
+				}
+		
+				&-#{$key}-between {
+					align-content: space-between !important;
+				}
+		
+				&-#{$key}-around {
+					align-content: space-around !important;
+				}
+		
+				&-#{$key}-stretch {
+					align-content: stretch !important;
+				}
+			}
+		}
+	}
+}
+
+.justify-content {
+	&-start {
+		justify-content: flex-start !important;
+	}
+
+	&-end {
+		justify-content: flex-end !important;
+	}
+
+	&-center {
+		justify-content: center !important;
+	}
+
+	&-between {
+		justify-content: space-between !important;
+	}
+
+	&-around {
+		justify-content: space-around !important;
+	}
+
+	&-evenly {
+		justify-content: space-evenly !important;
+	}
+
+	@each $key, $val in $grid {
+		@media (width >= #{map-get($val,breakpoint)}) {
+			&-#{$key}-start {
+				justify-content: flex-start !important;
+			}
+		
+			&-#{$key}-end {
+				justify-content: flex-end !important;
+			}
+		
+			&-#{$key}-center {
+				justify-content: center !important;
+			}
+		
+			&-#{$key}-between {
+				justify-content: space-between !important;
+			}
+		
+			&-#{$key}-around {
+				justify-content: space-around !important;
+			}
+		
+			&-#{$key}-evenly {
+				justify-content: space-evenly !important;
+			}
+		}
+	}
+}
+
+.order {
+	&-first {
+		order: -1 !important;
+	}
+
+	@for $i from 0 through $cols {
+		&-#{$i} {
+			order: #{$i} !important;
+		}
+	}
+
+	&-last {
+		order: 6 !important;
+	}
+
+	@each $key, $val in $grid {
+		@media (width >= #{map-get($val,breakpoint)}) {
+			&-#{$key}-first {
+				order: -1 !important;
+			}
+		
+			@for $i from 0 through $cols {
+				&-#{$key}-#{$i} {
+					order: #{$i} !important;
+				}
+			}
+		
+			&-#{$key}-last {
+				order: 6 !important;
+			}
+		}
+	}
+}

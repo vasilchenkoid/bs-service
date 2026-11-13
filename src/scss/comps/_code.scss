@@ -1,0 +1,16 @@
+.code {
+	display: inline-block;
+	padding-inline: max(0.25em, var(--#{$prefix}-space-inner-2));
+	border-radius: max(0.25em, var(--#{$prefix}-border-radius-1));
+	background-color: var(--#{$prefix}-color-theme-base-layer);
+	@include typography(code);
+
+	&-block {
+		display: block;
+		width: 100%;
+		padding: var(--#{$prefix}-grid-gutter-default);
+		border-radius: var(--#{$prefix}-border-radius-2);
+		background-color: var(--#{$prefix}-color-theme-base-layer);
+		@include typography(code);
+	}
+}

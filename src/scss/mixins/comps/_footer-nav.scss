@@ -1,0 +1,7 @@
+@mixin footer-nav-menu() {
+	@include flex(row);
+	align-items: center;
+	flex-wrap: wrap;
+	padding-left: 0;
+	list-style: none;
+}

@@ -1,0 +1,16 @@
+.carousel {
+	@include flex(row, var(--#{$prefix}-space-inner-4));
+	width: 100%;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+
+	& > * {
+		flex-grow: 0;
+		flex-shrink: 0;
+	}
+
+	&-snapping > * {
+		scroll-snap-align: start;
+		scroll-snap-stop: always;
+	}
+}

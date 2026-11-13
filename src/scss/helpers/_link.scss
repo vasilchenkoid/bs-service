@@ -1,0 +1,18 @@
+.link {
+	text-decoration: underline;
+	color: currentColor;
+
+	@each $key, $val in map-get($colors,theme) {
+		&-#{$key} {
+			text-decoration: underline;
+			color: var(--#{$prefix}-color-theme-#{$key}-text);
+		}
+	}
+
+	&-stretched::after {
+		position: absolute;
+		inset: 0;
+		z-index: 1;
+		content: '';
+	}
+}

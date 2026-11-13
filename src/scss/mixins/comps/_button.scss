@@ -1,0 +1,15 @@
+@mixin button($padding-inline: var(--#{$prefix}-space-inner-4)) {
+	@include flex-center(row, var(--#{$prefix}-space-inner-2));
+	height: var(--#{$prefix}-size-comp-height-md);
+	padding-inline: $padding-inline;
+	border-radius: var(--#{$prefix}-border-radius-2);
+	background-color: transparent;
+	outline-offset: 0;
+	outline: var(--#{$prefix}-color-theme-base-tone) solid 0;
+	@include typography(body, true);
+	@include typography-size(body, main);
+	text-align: center;
+	text-decoration: none;
+	vertical-align: middle;
+	cursor: pointer;
+}

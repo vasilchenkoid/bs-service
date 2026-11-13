@@ -1,0 +1,62 @@
+.modal {
+	width: calc(100% - var(--#{$prefix}-grid-gutter-default) * 2);
+	max-width: var(--#{$prefix}-size-modal-md);
+	max-height: calc(100vh - var(--#{$prefix}-grid-gutter-default) * 2);
+	max-height: calc(100dvh - var(--#{$prefix}-grid-gutter-default) * 2);
+	margin: auto;
+	border-radius: var(--#{$prefix}-border-radius-3);
+	background-color: var(--#{$prefix}-color-surface-primary-solid);
+	box-shadow: var(--#{$prefix}-shadow-level-5);
+	overflow-x: hidden;
+	overflow-y: auto;
+	z-index: var(--#{$prefix}-z-index-modal);
+
+	&::backdrop {
+		background-color: var(--#{$prefix}-color-special-backdrop-primary);
+		z-index: var(--#{$prefix}-z-index-modal-backdrop);
+	}
+
+	@each $key, $val in $modal-size {
+		&-#{$key} {
+			max-width: var(--#{$prefix}-size-modal-#{$key});
+		}
+	}
+
+	&-body {
+		@include flex(column);
+		padding: var(--#{$prefix}-grid-gutter-default);
+	}
+
+	&-header,
+	&-footer {
+		position: sticky;
+		flex-shrink: 0;
+		@include flex-center(row);
+		justify-content: space-between;
+		min-height: var(--#{$prefix}-size-comp-height-xxl);
+		padding-inline: var(--#{$prefix}-grid-gutter-default);
+		background-color: var(--#{$prefix}-color-surface-primary-solid);
+		z-index: var(--#{$prefix}-z-index-sticky);
+	}
+
+	&-header {
+		top: 0;
+	}
+
+	&-footer {
+		bottom: 0;
+	}
+
+	&-title {
+		@include flex(row, var(--#{$prefix}-space-inner-2));
+		align-items: center;
+		@include typography(heading);
+		@include typography-size(heading, h3);
+	}
+
+	&-actions {
+		flex-grow: 1;
+		@include flex-center(row, var(--#{$prefix}-space-inner-2));
+		justify-content: flex-end;
+	}
+}

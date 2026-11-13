@@ -1,0 +1,205 @@
+.btn {
+	@include button();
+
+	&:focus-visible {
+		outline-width: var(--#{$prefix}-space-inner-1);
+	}
+
+	&[disabled] {
+		cursor: default;
+	}
+
+	&-icon-left {
+		padding-left: var(--#{$prefix}-space-inner-3);
+	}
+
+	&-icon-right {
+		padding-right: var(--#{$prefix}-space-inner-3);
+	}
+
+	&-icon-both {
+		padding-inline: var(--#{$prefix}-space-inner-3);
+	}
+
+	&-icon-only {
+		width: var(--#{$prefix}-size-comp-height-md);
+		padding-inline: 0 !important;
+	}
+
+	&-solid {
+		background-color: var(--#{$prefix}-color-theme-base-default);
+		color: var(--#{$prefix}-color-text-inverse-main);
+
+		&:hover {
+			background-color: var(--#{$prefix}-color-theme-base-hover);
+		}
+
+		&:active {
+			background-color: var(--#{$prefix}-color-theme-base-active);
+		}
+
+		&[disabled] {
+			background-color: var(--#{$prefix}-color-theme-base-disabled);
+		}
+	}
+
+	&-outline {
+		border: 1px solid var(--#{$prefix}-color-theme-base-border);
+		color: var(--#{$prefix}-color-text-primary-main);
+
+		&:hover {
+			border-color: var(--#{$prefix}-color-theme-base-disabled);
+		}
+
+		&:active {
+			border-color: var(--#{$prefix}-color-theme-base-default);
+		}
+
+		&[disabled] {
+			color: var(--#{$prefix}-color-text-primary-label);
+		}
+	}
+
+	&-tonal {
+		background-color: var(--#{$prefix}-color-theme-base-tone);
+		color: var(--#{$prefix}-color-text-primary-main);
+
+		&:hover {
+			background-color: var(--#{$prefix}-color-theme-base-border);
+		}
+
+		&:active {
+			background-color: var(--#{$prefix}-color-theme-base-disabled);
+		}
+
+		&[disabled] {
+			background-color: var(--#{$prefix}-color-theme-base-layer);
+			color: var(--#{$prefix}-color-text-primary-label);
+		}
+	}
+
+	&-text {
+		color: var(--#{$prefix}-color-text-primary-main);
+
+		&:hover {
+			background-color: var(--#{$prefix}-color-theme-base-layer);
+		}
+
+		&:active {
+			background-color: var(--#{$prefix}-color-theme-base-tone);
+		}
+
+		&[disabled] {
+			color: var(--#{$prefix}-color-text-primary-label);
+		}
+	}
+
+	@each $key, $val in map-get($colors,theme) {
+		&-#{$key},
+		&-solid-#{$key} {
+			background-color: var(--#{$prefix}-color-theme-#{$key}-default);
+			color: foreground(map-get($val, default, foreground));
+			outline-color: var(--#{$prefix}-color-theme-#{$key}-tone);
+
+			&:hover {
+				background-color: var(--#{$prefix}-color-theme-#{$key}-hover);
+			}
+
+			&:active {
+				background-color: var(--#{$prefix}-color-theme-#{$key}-active);
+			}
+
+			&[disabled] {
+				background-color: var(--#{$prefix}-color-theme-#{$key}-disabled);
+			}
+		}
+
+		&-outline-#{$key} {
+			border: 1px solid var(--#{$prefix}-color-theme-#{$key}-border);
+			color: var(--#{$prefix}-color-theme-#{$key}-text);
+			outline-color: var(--#{$prefix}-color-theme-#{$key}-tone);
+
+			&:hover {
+				border-color: var(--#{$prefix}-color-theme-#{$key}-disabled);
+			}
+
+			&:active {
+				border-color: var(--#{$prefix}-color-theme-#{$key}-default);
+			}
+
+			&[disabled] {
+				color: var(--#{$prefix}-color-theme-#{$key}-disabled);
+			}
+		}
+
+		&-tonal-#{$key} {
+			background-color: var(--#{$prefix}-color-theme-#{$key}-tone);
+			color: var(--#{$prefix}-color-theme-#{$key}-text);
+			outline-color: var(--#{$prefix}-color-theme-#{$key}-tone);
+
+			&:hover {
+				background-color: var(--#{$prefix}-color-theme-#{$key}-border);
+			}
+
+			&:active {
+				background-color: var(--#{$prefix}-color-theme-#{$key}-disabled);
+			}
+
+			&[disabled] {
+				background-color: var(--#{$prefix}-color-theme-#{$key}-layer);
+				color: var(--#{$prefix}-color-theme-#{$key}-disabled);
+			}
+		}
+
+		&-text-#{$key} {
+			color: var(--#{$prefix}-color-theme-#{$key}-text);
+			outline-color: var(--#{$prefix}-color-theme-#{$key}-tone);
+
+			&:hover {
+				background-color: var(--#{$prefix}-color-theme-#{$key}-layer);
+			}
+
+			&:active {
+				background-color: var(--#{$prefix}-color-theme-#{$key}-tone);
+			}
+
+			&[disabled] {
+				color: var(--#{$prefix}-color-theme-#{$key}-disabled);
+			}
+		}
+	}
+
+	@include component-sizing();
+
+	&-icon-left#{&}-sm {
+		padding-left: var(--#{$prefix}-space-inner-2);
+	}
+
+	&-icon-right#{&}-sm {
+		padding-right: var(--#{$prefix}-space-inner-2);
+	}
+
+	&-icon-both#{&}-sm {
+		padding-inline: var(--#{$prefix}-space-inner-2);
+	}
+
+	&-icon-only#{&}-sm {
+		width: var(--#{$prefix}-size-comp-height-sm);
+	}
+
+	&-icon-left#{&}-lg {
+		padding-left: var(--#{$prefix}-space-inner-4);
+	}
+
+	&-icon-right#{&}-lg {
+		padding-right: var(--#{$prefix}-space-inner-4);
+	}
+
+	&-icon-both#{&}-lg {
+		padding-inline: var(--#{$prefix}-space-inner-4);
+	}
+
+	&-icon-only#{&}-lg {
+		width: var(--#{$prefix}-size-comp-height-lg);
+	}
+}

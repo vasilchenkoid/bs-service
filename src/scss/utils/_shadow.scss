@@ -1,0 +1,17 @@
+.shadow {
+	@for $i from 0 through 5 {
+		&-level-#{$i} {
+			box-shadow: var(--#{$prefix}-shadow-level-#{$i}) !important;
+		}
+	}
+
+	@each $key, $val in $grid {
+		@media (width >= #{map-get($val,breakpoint)}) {
+			@for $i from 0 through 5 {
+				&-#{$key}-level-#{$i} {
+					box-shadow: var(--#{$prefix}-shadow-level-#{$i}) !important;
+				}
+			}
+		}
+	}
+}

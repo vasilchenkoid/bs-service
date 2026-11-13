@@ -1,0 +1,124 @@
+.app-nav {
+	order: 1;
+	flex-shrink: 0;
+	@include flex-center(row);
+	min-height: var(--#{$prefix}-size-comp-height-xxl);
+	padding: var(--#{$prefix}-space-inner-1);
+	z-index: var(--#{$prefix}-z-index-fixed);
+
+	&-brand {
+		@include flex(row, var(--#{$prefix}-space-inner-2));
+		align-items: center;
+		width: auto;
+		max-height: var(--#{$prefix}-size-comp-height-md);
+		@include typography(heading);
+		@include typography-size(heading, h3);
+		text-decoration: none;
+		white-space: nowrap;
+
+		* {
+			width: auto;
+			max-height: var(--#{$prefix}-size-comp-height-md);
+		}
+	}
+
+	&-form,
+	&-actions {
+		@include flex(column, var(--#{$prefix}-space-inner-2));
+		align-items: stretch;
+		width: 100%;
+	}
+
+	&-text {
+		color: var(--#{$prefix}-color-text-primary-label);
+	}
+
+	&-menu {
+		@include flex(row, var(--#{$prefix}-space-inner-1));
+		align-items: stretch;
+		width: 100%;
+		padding-left: 0;
+		list-style: none;
+
+		& > * {
+			flex: 1 0 0;
+		}
+	}
+
+	&-item {
+		@include button();
+		flex-direction: column;
+		gap: 0;
+		height: 100%;
+		padding: var(--#{$prefix}-space-inner-2);
+		@include typography-size(body, small);
+
+		&:hover {
+			background-color: var(--#{$prefix}-color-theme-base-layer);
+		}
+
+		&:active {
+			background-color: var(--#{$prefix}-color-theme-base-tone);
+		}
+
+		&.active {
+			background-color: var(--#{$prefix}-color-theme-primary-tone);
+			color: var(--#{$prefix}-color-theme-primary-text);
+			outline-color: var(--#{$prefix}-color-theme-primary-tone);
+		}
+	}
+
+	$prev-breakpoint: null;
+
+	@each $key, $val in $grid {
+		@media (width >= #{map-get($val,breakpoint)}) {
+			@if $prev-breakpoint == null {
+				// first breakpoint
+
+				& {
+					order: 0;
+					flex-direction: column;
+					justify-content: flex-start;
+					width: var(--#{$prefix}-space-outer-6);
+					padding-block: var(--#{$prefix}-grid-gutter-default);
+					overflow-y: auto;
+
+					&-menu {
+						flex-grow: 1;
+						flex-direction: column;
+						align-items: stretch;
+						justify-content: flex-start;
+
+						& > * {
+							flex: 0 0 0;
+						}
+					}
+
+					&-item {
+						height: auto;
+					}
+				}
+
+			} @else {
+
+				& {
+					align-items: flex-start;
+					width: var(--#{$prefix}-size-comp-width-sm);
+					padding-inline: var(--#{$prefix}-grid-gutter-default);
+
+					&-item {
+						flex-direction: row;
+						justify-content: flex-start;
+						gap: var(--#{$prefix}-space-inner-2);
+						padding: var(--#{$prefix}-space-inner-2) var(--#{$prefix}-space-inner-3);
+						@include typography-size(body, main);
+						text-align: left;
+					}
+				}
+
+			}
+		}
+
+		$prev-breakpoint: $key;
+	}
+}

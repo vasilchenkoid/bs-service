@@ -1,0 +1,7 @@
+.v-divider {
+	display: inline-block;
+	align-self: stretch;
+	max-width: 1px;
+	min-height: 1em;
+	border-left: 1px solid var(--#{$prefix}-color-theme-base-border);
+}

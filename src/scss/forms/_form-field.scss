@@ -1,0 +1,4 @@
+.form-field {
+	@include flex(column, var(--#{$prefix}-space-inner-1));
+	width: 100%;
+}

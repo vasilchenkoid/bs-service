@@ -1,0 +1,93 @@
+// bg
+
+.bg {
+	&-inherit {
+		background-color: inherit !important;
+	}
+
+	&-transparent {
+		background-color: transparent !important;
+	}
+
+	@each $key, $val in map-get($colors,surface) {
+		&-surface-#{$key} {
+			background-color: var(--#{$prefix}-color-surface-#{$key}-solid) !important;
+		}
+
+		&-blur-max-#{$key} {
+			background-color: var(--#{$prefix}-color-surface-#{$key}-blur-max) !important;
+		}
+
+		&-blur-hard-#{$key} {
+			background-color: var(--#{$prefix}-color-surface-#{$key}-blur-hard) !important;
+		}
+
+		&-blur-medium-#{$key} {
+			background-color: var(--#{$prefix}-color-surface-#{$key}-blur-medium) !important;
+		}
+
+		&-blur-soft-#{$key} {
+			background-color: var(--#{$prefix}-color-surface-#{$key}-blur-soft) !important;
+		}
+
+		&-blur-min-#{$key} {
+			background-color: var(--#{$prefix}-color-surface-#{$key}-blur-min) !important;
+		}
+	}
+
+	@each $key, $val in map-get($colors,theme) {
+		&-theme-#{$key} {
+			background-color: var(--#{$prefix}-color-theme-#{$key}-default) !important;
+		}
+
+		&-theme-#{$key}-disabled {
+			background-color: var(--#{$prefix}-color-theme-#{$key}-disabled) !important;
+		}
+
+		&-theme-#{$key}-tonal {
+			background-color: var(--#{$prefix}-color-theme-#{$key}-tone) !important;
+		}
+	}
+}
+
+// text
+
+.color {
+	&-inherit {
+		color: inherit !important;
+	}
+
+	@each $key, $val in map-get($colors,text,primary) {
+		&-#{$key} {
+			color: var(--#{$prefix}-color-text-primary-#{$key}) !important;
+		}
+	}
+
+	@each $key, $val in map-get($colors,text,inverse) {
+		&-#{$key}-inverse {
+			color: var(--#{$prefix}-color-text-inverse-#{$key}) !important;
+		}
+	}
+
+	@each $key, $val in map-get($colors,theme) {
+		&-theme-#{$key} {
+			color: var(--#{$prefix}-color-theme-#{$key}-text) !important;
+		}
+	}
+}
+
+// text-bg
+
+.text-bg {
+	@each $key, $val in map-get($colors,theme) {
+		&-#{$key} {
+			background-color: var(--#{$prefix}-color-theme-#{$key}-default) !important;
+			color: foreground(map-get($val, default, foreground)) !important;
+		}
+
+		&-#{$key}-tonal {
+			background-color: var(--#{$prefix}-color-theme-#{$key}-tone) !important;
+			color: var(--#{$prefix}-color-text-primary-main) !important;
+		}
+	}
+}

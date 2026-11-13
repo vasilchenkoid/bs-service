@@ -1,0 +1,44 @@
+.accordion {
+	width: 100%;
+
+	summary,
+	&-header {
+		@include flex(row, var(--#{$prefix}-space-inner-2));
+		align-items: center;
+		list-style: none;
+	}
+
+	summary::marker,
+	summary::-webkit-details-marker,
+	&-header::marker,
+	&-header::-webkit-details-marker {
+		display: none;
+	}
+
+	summary::after,
+	&-header::after {
+		content: '';
+		flex-shrink: 0;
+		display: block;
+		width: 0;
+		height: 0;
+		margin-inline: 0.375rem;
+		border-style: solid;
+		border-width: 0.375rem 0.375rem 0 0.375rem;
+		border-color: var(--#{$prefix}-color-text-primary-main) transparent transparent transparent;
+	}
+
+	&[open] summary::after,
+	&[open] &-header::after {
+		border-width: 0 0.375rem 0.375rem 0.375rem;
+		border-color: transparent transparent var(--#{$prefix}-color-text-primary-main) transparent;
+	}
+
+	& > *+* {
+		margin-top: var(--#{$prefix}-space-inner-4);
+	}
+
+	&-body {
+		@include flex(column, var(--#{$prefix}-space-inner-4));
+	}
+}

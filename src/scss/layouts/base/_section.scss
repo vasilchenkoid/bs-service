@@ -1,0 +1,18 @@
+.section {
+	width: 100%;
+	padding-block: var(--#{$prefix}-grid-section-space-default);
+
+	$prev-breakpoint: null;
+
+	@each $g-key, $g-val in $grid {
+		@if $prev-breakpoint == null {
+			@each $b-key, $b-val in map-get($grid,$g-key,section-space) {
+				&-space-#{$b-key} {
+					padding-block: var(--#{$prefix}-grid-section-space-#{$b-key});
+				}
+			}
+		}
+
+		$prev-breakpoint: $g-key;
+	}
+}

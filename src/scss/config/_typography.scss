@@ -1,0 +1,50 @@
+$typography: (
+	body: (
+		font: font-family("'Google Sans'", base),
+		weight: 400,
+		bolder-weight: 500,
+		variants: (
+			small: (size: 1rem,    lh: calc(1.5 / 1)),    // 16/24
+			main:  (size: 1.25rem, lh: calc(1.75 / 1.25)) // 20/28
+		)
+	),
+	heading: (
+		font: font-family("'Google Sans'", base),
+		weight: 400,
+		bolder-weight: 600,
+		variants: (
+			h4: (size: 1.5rem, lh: calc(2 / 1.5)), // 24/32
+			h3: (size: 2rem,   lh: calc(2.5 / 2)), // 32/40
+			h2: (size: 2.5rem, lh: calc(3 / 2.5)), // 40/48
+			h1: (size: 3rem,   lh: calc(3.5 / 3))  // 48/56
+		)
+	),
+	display: (
+		font: font-family("'Google Sans'", base),
+		weight: 400,
+		bolder-weight: 700,
+		variants: (
+			h4: (size: clamp(1.25rem, 2.5vw, 3rem),  lh: 1), // 20 - 2.5% - 48
+			h3: (size: clamp(2rem,    4vw,   5rem),  lh: 1), // 32 - 4% - 80
+			h2: (size: clamp(2.5rem,  5vw,   6rem),  lh: 1), // 40 - 5% - 96
+			h1: (size: clamp(5rem,    10vw,  12rem), lh: 1)  // 80 - 10% - 192
+		)
+	),
+	code: (
+		font: font-family("'Roboto Mono'", mono),
+		weight: 400,
+		bolder-weight: 600,
+		variants: (
+			small: (size: 1rem,    lh: calc(1.5 / 1)),    // 16/24
+			main:  (size: 1.25rem, lh: calc(1.75 / 1.25)) // 20/28
+		)
+	)
+);
+
+$icon-size: (
+	xs: 1.25rem, // 20
+	sm: 1.5rem,  // 24
+	md: 2rem,    // 32
+	lg: 2.5rem,  // 40
+	xl: 3rem     // 48
+);

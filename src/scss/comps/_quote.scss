@@ -1,0 +1,42 @@
+.quote {
+	display: block;
+	width: 100%;
+	@include typography(body, true);
+	@include typography-size(body, main);
+
+	&-centered {
+		text-align: center;
+	}
+
+	&-content {
+		&::before,
+		&::after {
+			color: var(--#{$prefix}-color-text-primary-placeholder);
+			@include typography(display);
+			font-size: 1.5rem;
+			line-height: 0;
+		}
+
+		&::before {
+			content: open-quote;
+			margin-right: var(--#{$prefix}-space-inner-1);
+		}
+
+		&::after {
+			content: close-quote;
+			margin-left: var(--#{$prefix}-space-inner-1);
+		}
+	}
+
+	&-source {
+		@include typography(body);
+		@include typography-size(body, small);
+		margin-top: var(--#{$prefix}-space-inner-1);
+		color: var(--#{$prefix}-color-text-primary-label);
+
+		&::before {
+			content: '\2014';
+			margin-right: var(--#{$prefix}-space-inner-1);
+		}
+	}
+}

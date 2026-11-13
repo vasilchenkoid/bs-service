@@ -1,0 +1,36 @@
+.app-layout {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	height: 100dvh;
+
+	.main {
+		order: 0;
+		flex-grow: 1;
+		overflow-x: hidden;
+		overflow-y: auto;
+	}
+
+	.section,
+	.footer {
+		padding-block: var(--#{$prefix}-grid-gutter-default);
+	}
+
+	$prev-breakpoint: null;
+
+	@each $key, $val in $grid {
+		@if $prev-breakpoint == null {
+			@media (width >= #{map-get($val,breakpoint)}) {
+				& {
+					flex-direction: row;
+
+					.main {
+						order: 1;
+					}
+				}
+			}
+		}
+
+		$prev-breakpoint: $key;
+	}
+}

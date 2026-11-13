@@ -1,0 +1,193 @@
+.header {
+	@include flex-center(column);
+	min-height: var(--#{$prefix}-size-comp-height-xxl);
+	padding-block: var(--#{$prefix}-space-inner-2);
+
+	@include header-footer();
+
+	&-nav {
+		@include header-nav-menu();
+
+		&-toggle {
+			@include button(var(--#{$prefix}-space-inner-3));
+			flex-direction: column;
+			gap: var(--#{$prefix}-space-inner-1);
+			width: var(--#{$prefix}-size-comp-height-md);
+			border: 1px solid var(--#{$prefix}-color-theme-base-border);
+			display: none;
+
+			&::before,
+			&::after {
+				content: '';
+				display: block;
+				width: 100%;
+				height: 1px;
+				border-radius: var(--#{$prefix}-border-radius-round);
+				background-color: var(--#{$prefix}-color-text-primary-main);
+			}
+
+			&:focus-visible {
+				outline-width: var(--#{$prefix}-space-inner-1);
+			}
+		}
+
+		&-menu {
+			@include header-nav-menu();
+
+			&::before {
+				content: '';
+				position: absolute;
+				top: calc(-1 * var(--#{$prefix}-space-inner-4));
+				left: 0;
+				right: 0;
+				display: none;
+				width: 100%;
+				height: var(--#{$prefix}-space-inner-4);
+			}
+		}
+
+		&-item {
+			@include button();
+
+			&:hover {
+				background-color: var(--#{$prefix}-color-theme-base-layer);
+			}
+
+			&:active {
+				background-color: var(--#{$prefix}-color-theme-base-tone);
+			}
+
+			&.active {
+				background-color: var(--#{$prefix}-color-theme-primary-tone);
+				color: var(--#{$prefix}-color-theme-primary-text);
+				outline-color: var(--#{$prefix}-color-theme-primary-tone);
+			}
+		}
+
+		&.expand &-toggle {
+			display: flex;
+		}
+
+		&.expand &-menu {
+			@include header-nav-menu-collapsed();
+		}
+
+		&.expand &-toggle:hover ~ &-menu,
+		&.expand &-toggle:focus ~ &-menu,
+		&.expand &-menu:hover {
+			display: flex;
+		}
+
+		&.expand &-item {
+			justify-content: flex-start;
+			text-align: left;
+		}
+
+		&.expand.expand-left {
+			order: -1;
+		}
+
+		&.expand.expand-right {
+			order: 9999;
+		}
+
+		&.expand.expand-left &-menu {
+			left: 0;
+			right: auto;
+		}
+
+		&.expand.expand-right &-menu {
+			left: auto;
+			right: 0;
+		}
+
+		$prev-breakpoint: null;
+
+		@each $key, $val in $grid {
+			@media (width < #{map-get($val,breakpoint)}) {
+				@if $prev-breakpoint == null {
+					// first breakpoint
+
+					&-toggle {
+						display: flex;
+					}
+
+					&-menu {
+						@include header-nav-menu-collapsed();
+					}
+
+					&-toggle:hover ~ &-menu,
+					&-toggle:focus ~ &-menu,
+					&-menu:hover {
+						display: flex;
+					}
+
+					&-item {
+						justify-content: flex-start;
+						text-align: left;
+					}
+
+					&.expand-left {
+						order: -1;
+					}
+			
+					&.expand-right {
+						order: 9999;
+					}
+
+					&.expand-left &-menu {
+						left: 0;
+						right: auto;
+					}
+			
+					&.expand-right &-menu {
+						left: auto;
+						right: 0;
+					}
+
+				} @else {
+
+					&.expand-#{$prev-breakpoint} &-toggle {
+						display: flex;
+					}
+
+					&.expand-#{$prev-breakpoint} &-menu {
+						@include header-nav-menu-collapsed();
+					}
+
+					&.expand-#{$prev-breakpoint} &-toggle:hover ~ &-menu,
+					&.expand-#{$prev-breakpoint} &-toggle:focus ~ &-menu,
+					&.expand-#{$prev-breakpoint} &-menu:hover {
+						display: flex;
+					}
+
+					&.expand-#{$prev-breakpoint} &-item {
+						justify-content: flex-start;
+						text-align: left;
+					}
+
+					&.expand-#{$prev-breakpoint}.expand-left {
+						order: -1;
+					}
+			
+					&.expand-#{$prev-breakpoint}.expand-right {
+						order: 9999;
+					}
+
+					&.expand-#{$prev-breakpoint}.expand-left &-menu {
+						left: 0;
+						right: auto;
+					}
+			
+					&.expand-#{$prev-breakpoint}.expand-right &-menu {
+						left: auto;
+						right: 0;
+					}
+
+				}
+			}
+
+			$prev-breakpoint: $key;
+		}
+	}
+}

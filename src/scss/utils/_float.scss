@@ -1,0 +1,29 @@
+.float {
+	&-left {
+		float: left !important;
+	}
+
+	&-right {
+		float: right !important;
+	}
+
+	&-none {
+		float: none !important;
+	}
+
+	@each $key, $val in $grid {
+		@media (width >= #{map-get($val,breakpoint)}) {
+			&-#{$key}-left {
+				float: left !important;
+			}
+		
+			&-#{$key}-right {
+				float: right !important;
+			}
+		
+			&-#{$key}-none {
+				float: none !important;
+			}
+		}
+	}
+}

@@ -1,0 +1,85 @@
+.d {
+	&-inline {
+		display: inline !important;
+	}
+
+	&-inline-block {
+		display: inline-block !important;
+	}
+
+	&-block {
+		display: block !important;
+	}
+
+	&-grid {
+		display: grid !important;
+	}
+
+	&-table {
+		display: table !important;
+	}
+
+	&-table-row {
+		display: table-row !important;
+	}
+
+	&-table-cell {
+		display: table-cell !important;
+	}
+
+	&-flex {
+		display: flex !important;
+	}
+
+	&-inline-flex {
+		display: inline-flex !important;
+	}
+
+	&-none {
+		display: none !important;
+	}
+
+	@each $key, $val in $grid {
+		@media (width >= #{map-get($val,breakpoint)}) {
+			&-#{$key}-inline {
+				display: inline !important;
+			}
+		
+			&-#{$key}-inline-block {
+				display: inline-block !important;
+			}
+		
+			&-#{$key}-block {
+				display: block !important;
+			}
+		
+			&-#{$key}-grid {
+				display: grid !important;
+			}
+		
+			&-#{$key}-table {
+				display: table !important;
+			}
+		
+			&-#{$key}-table-row {
+				display: table-row !important;
+			}
+		
+			&-#{$key}-table-cell {
+				display: table-cell !important;
+			}
+		
+			&-#{$key}-flex {
+				display: flex !important;
+			}
+		
+			&-#{$key}-inline-flex {
+				display: inline-flex !important;
+			}
+		
+			&-#{$key}-none {
+				display: none !important;
+			}
+		}
+	}
+}

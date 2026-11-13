@@ -1,0 +1,113 @@
+.table {
+	width: 100%;
+
+	* {
+		text-align: left;
+		vertical-align: top;
+	}
+
+	.cell-title,
+	thead *,
+	tfoot *,
+	th {
+		@include typography(body, true);
+	}
+
+	th,
+	td {
+		padding: var(--#{$prefix}-space-inner-2) var(--#{$prefix}-space-inner-3);
+	}
+
+	&-centered * {
+		text-align: center;
+		vertical-align: middle;
+	}
+
+	&-bordered {
+		border-radius: var(--#{$prefix}-border-radius-2);
+		border: 1px solid var(--#{$prefix}-color-theme-base-border);
+
+		tr > * {
+			border-top: 1px solid var(--#{$prefix}-color-theme-base-border);
+		}
+
+		tr > *:not(:first-child) {
+			border-left: 1px solid var(--#{$prefix}-color-theme-base-border);
+		}
+
+		&-rows tr > * {
+			border-top: 1px solid var(--#{$prefix}-color-theme-base-border);
+		}
+
+		&-rows-top tr > * {
+			border-top: 1px solid var(--#{$prefix}-color-theme-base-border);
+		}
+
+		&-rows-bottom tr > * {
+			border-bottom: 1px solid var(--#{$prefix}-color-theme-base-border);
+		}
+
+		&-cols tr > *:not(:first-child) {
+			border-left: 1px solid var(--#{$prefix}-color-theme-base-border);
+		}
+
+		&-cols-left tr > * {
+			border-left: 1px solid var(--#{$prefix}-color-theme-base-border);
+		}
+
+		&-cols-right tr > * {
+			border-right: 1px solid var(--#{$prefix}-color-theme-base-border);
+		}
+	}
+
+	&-striped-rows {
+		tr:nth-child(odd) {
+			background-color: var(--#{$prefix}-color-surface-primary-solid);
+		}
+
+		tr:nth-child(even) {
+			background-color: var(--#{$prefix}-color-surface-secondary-solid);
+		}
+	}
+
+	&-striped-cols {
+		tr > *:nth-child(odd) {
+			background-color: var(--#{$prefix}-color-surface-primary-solid);
+		}
+
+		tr > *:nth-child(even) {
+			background-color: var(--#{$prefix}-color-surface-secondary-solid);
+		}
+	}
+
+	@each $key, $val in map-get($colors,theme) {
+		&-#{$key} .cell-title,
+		&-#{$key} thead *,
+		&-#{$key} tfoot *,
+		&-#{$key} th {
+			color: var(--#{$prefix}-color-theme-#{$key}-text);
+		}
+
+		&-#{$key},
+		&-#{$key} tr,
+		&-#{$key} tr > * {
+			border-color: var(--#{$prefix}-color-theme-#{$key}-border) !important;
+		}
+	
+		&-#{$key}#{&}-striped-rows tr:nth-child(odd) {
+			background-color: transparent;
+		}
+	
+		&-#{$key}#{&}-striped-rows tr:nth-child(even) {
+			background-color: var(--#{$prefix}-color-theme-#{$key}-layer);
+		}
+	
+		&-#{$key}#{&}-striped-cols tr > *:nth-child(odd) {
+			background-color: transparent;
+		}
+	
+		&-#{$key}#{&}-striped-cols tr > *:nth-child(even) {
+			background-color: var(--#{$prefix}-color-theme-#{$key}-layer);
+		}
+	}
+}

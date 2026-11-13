@@ -1,0 +1,27 @@
+:root,
+::backdrop {
+	color-scheme: light;
+
+	@each $i-key, $i-val in $colors { // surface, text, element...
+		@each $j-key, $j-val in $i-val { // primary, secondary, inverse...
+			@each $k-key, $k-val in $j-val {
+				--#{$prefix}-color-#{$i-key}-#{$j-key}-#{$k-key}: #{map-get($k-val, light)};
+			}
+		}
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	:root,
+	::backdrop {
+		color-scheme: dark;
+
+		@each $i-key, $i-val in $colors { // surface, text, element...
+			@each $j-key, $j-val in $i-val { // primary, secondary, inverse...
+				@each $k-key, $k-val in $j-val {
+					--#{$prefix}-color-#{$i-key}-#{$j-key}-#{$k-key}: #{map-get($k-val, dark)};
+				}
+			}
+		}
+	}
+}

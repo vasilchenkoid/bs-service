@@ -1,0 +1,31 @@
+.callout {
+	position: relative;
+	@include flex(column, var(--#{$prefix}-space-inner-4));
+	width: 100%;
+	padding: var(--#{$prefix}-grid-gutter-default);
+	padding-left: calc(0.25rem + var(--#{$prefix}-grid-gutter-default));
+	border-radius: var(--#{$prefix}-border-radius-3);
+	background-color: var(--#{$prefix}-color-theme-base-tone);
+	overflow: hidden;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		width: 0.25rem;
+		height: 100%;
+		background-color: var(--#{$prefix}-color-theme-base-border);
+	}
+
+	@each $key, $val in map-get($colors,theme) {
+		&-#{$key} {
+			background-color: var(--#{$prefix}-color-theme-#{$key}-tone);
+
+			&::before {
+				background-color: var(--#{$prefix}-color-theme-#{$key}-border);
+			}
+		}
+	}
+}

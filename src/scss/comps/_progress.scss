@@ -1,0 +1,37 @@
+.progress {
+	width: 100%;
+	height: 0.5rem;
+	border-radius: var(--#{$prefix}-border-radius-round);
+	background-color: var(--#{$prefix}-color-theme-base-tone);
+	overflow: hidden;
+
+	&::-moz-progress-bar {
+		background-color: var(--#{$prefix}-color-theme-base-default);
+	}
+
+	&::-webkit-progress-bar {
+		background-color: var(--#{$prefix}-color-theme-base-tone);
+	}
+
+	&::-webkit-progress-value {
+		background-color: var(--#{$prefix}-color-theme-base-default);
+	}
+
+	@each $key, $val in map-get($colors,theme) {
+		&-#{$key} {
+			background-color: var(--#{$prefix}-color-theme-#{$key}-tone);
+
+			&::-moz-progress-bar {
+				background-color: var(--#{$prefix}-color-theme-#{$key}-default);
+			}
+		
+			&::-webkit-progress-bar {
+				background-color: var(--#{$prefix}-color-theme-#{$key}-tone);
+			}
+		
+			&::-webkit-progress-value {
+				background-color: var(--#{$prefix}-color-theme-#{$key}-default);
+			}
+		}
+	}
+}

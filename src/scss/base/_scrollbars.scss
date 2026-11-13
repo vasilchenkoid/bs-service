@@ -1,0 +1,20 @@
+@media (hover: hover) and (pointer: fine) {
+	.custom-scrollbar {
+		scrollbar-width: thin;
+		scrollbar-color: var(--#{$prefix}-color-theme-base-disabled) var(--#{$prefix}-color-theme-base-tone);
+
+		&::-webkit-scrollbar {
+			width: 0.5rem;
+			height: 0.25rem;
+
+			&-track {
+				background-color: var(--#{$prefix}-color-theme-base-tone);
+			}
+
+			&-thumb {
+				background-color: var(--#{$prefix}-color-theme-base-disabled);
+				border-radius: var(--#{$prefix}-border-radius-round);
+			}
+		}
+	}
+}

@@ -1,0 +1,77 @@
+.border {
+	&-none {
+		border: none !important;
+	}
+
+	&-top {
+		border-top: 1px solid var(--#{$prefix}-color-theme-base-border) !important;
+	}
+
+	&-bottom {
+		border-bottom: 1px solid var(--#{$prefix}-color-theme-base-border) !important;
+	}
+
+	&-left {
+		border-left: 1px solid var(--#{$prefix}-color-theme-base-border) !important;
+	}
+
+	&-right {
+		border-right: 1px solid var(--#{$prefix}-color-theme-base-border) !important;
+	}
+
+	&-all {
+		border: 1px solid var(--#{$prefix}-color-theme-base-border) !important;
+	}
+
+	@each $key, $val in $grid {
+		@media (width >= #{map-get($val,breakpoint)}) {
+			&-#{$key}-none {
+				border: none !important;
+			}
+		
+			&-#{$key}-top {
+				border-top: 1px solid var(--#{$prefix}-color-theme-base-border) !important;
+			}
+		
+			&-#{$key}-bottom {
+				border-bottom: 1px solid var(--#{$prefix}-color-theme-base-border) !important;
+			}
+		
+			&-#{$key}-left {
+				border-left: 1px solid var(--#{$prefix}-color-theme-base-border) !important;
+			}
+		
+			&-#{$key}-right {
+				border-right: 1px solid var(--#{$prefix}-color-theme-base-border) !important;
+			}
+		
+			&-#{$key}-all {
+				border: 1px solid var(--#{$prefix}-color-theme-base-border) !important;
+			}
+		}
+	}
+
+	&-style {
+		&-solid {
+			border-style: solid !important;
+		}
+
+		&-dotted {
+			border-style: dotted !important;
+		}
+
+		&-dashed {
+			border-style: dashed !important;
+		}
+
+		&-double {
+			border-style: double !important;
+		}
+	}
+
+	@each $key, $val in map-get($colors,theme) {
+		&-color-#{$key} {
+			border-color: var(--#{$prefix}-color-theme-#{$key}-border) !important;
+		}
+	}
+}

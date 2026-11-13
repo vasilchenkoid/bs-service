@@ -1,0 +1,99 @@
+$prefix: bs;
+
+$unit: (
+	base:     0.25rem,
+	scale:    0.01,
+	duration: 100ms
+);
+
+$blur: (
+	none:   0,
+	min:    10,
+	soft:   20,
+	medium: 50,
+	hard:   80,
+	max:    100
+);
+
+$border-radius: (
+	none:  0,
+	1:     0.5rem,  // 8
+	2:     1rem,    // 16
+	3:     1.25rem, // 20
+	4:     1.5rem,  // 24
+	5:     2rem,    // 32
+	6:     2.5rem,  // 40
+	round: 9999px
+);
+
+$comp-height: (
+	xs:  1.5rem, // 24
+	sm:  2rem,   // 32
+	md:  2.5rem, // 40
+	lg:  3rem,   // 48
+	xl:  3.5rem, // 56
+	xxl: 4rem    // 64
+);
+
+$comp-width: (
+	xs:  15rem, // 240
+	sm:  20rem, // 320
+	md:  25rem, // 400
+	lg:  30rem, // 480
+	xl:  35rem, // 560
+	xxl: 40rem  // 640
+);
+
+$modal-size: (
+	xs: 25rem,   // 400
+	sm: 37.5rem, // 600
+	md: 50rem,   // 800
+	lg: 62.5rem, // 1000
+	xl: 75rem,   // 1200
+	xxl: 100rem  // 1600
+);
+
+$opacity: (
+	none:       0.00,
+	min:        0.05,
+	extra-low:  0.10,
+	low:        0.20,
+	medium:     0.50,
+	high:       0.80,
+	extra-high: 0.95,
+	max:        1.00
+);
+
+$ratio: (
+	// w * h
+	9x21: calc(21 / 9),
+	1x2:  calc(2  / 1),
+	9x16: calc(16 / 9),
+	2x3:  calc(3  / 2),
+	3x4:  calc(4  / 3),
+	4x5:  calc(5  / 4),
+	1x1:  calc(1  / 1),
+	5x4:  calc(4  / 5),
+	4x3:  calc(3  / 4),
+	3x2:  calc(2  / 3),
+	16x9: calc(9  / 16),
+	2x1:  calc(1  / 2),
+	21x9: calc(9  / 21)
+);
+
+$space-number: 6;
+
+$z-index: (
+	n1:                 -1,
+	zero:               0,
+	dropdown:           1000,
+	sticky:             1020,
+	fixed:              1030,
+	offcanvas-backdrop: 1040,
+	offcanvas:          1045,
+	modal-backdrop:     1050,
+	modal:              1055,
+	popover:            1070,
+	tooltip:            1080,
+	toast:              1090
+);

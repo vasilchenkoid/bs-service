@@ -1,0 +1,16 @@
+@mixin component-sizing(
+	$sm-padding-inline: var(--#{$prefix}-space-inner-3),
+	$lg-padding-inline: var(--#{$prefix}-space-inner-6)
+) {
+	&-sm {
+		height: var(--#{$prefix}-size-comp-height-sm);
+		padding-inline: $sm-padding-inline;
+		border-radius: var(--#{$prefix}-border-radius-1);
+	}
+
+	&-lg {
+		height: var(--#{$prefix}-size-comp-height-lg);
+		padding-inline: $lg-padding-inline;
+		border-radius: var(--#{$prefix}-border-radius-3);
+	}
+}

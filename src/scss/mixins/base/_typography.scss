@@ -1,0 +1,9 @@
+@mixin typography($type: 'body', $bolder: false) {
+	font-family: var(--#{$prefix}-typography-#{$type}-font);
+	font-weight: var(--#{$prefix}-typography-#{$type}#{if($bolder, '-bolder', null)}-weight);
+}
+
+@mixin typography-size($type: 'body', $variant: 'main') {
+	font-size: var(--#{$prefix}-typography-#{$type}-#{$variant}-size);
+	line-height: var(--#{$prefix}-typography-#{$type}-#{$variant}-lh);
+}

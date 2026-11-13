@@ -1,0 +1,13 @@
+@mixin state-scaling($hover: true, $active: false) {
+	@if $hover {
+		&:hover {
+			transform: var(--#{$prefix}-motion-transform-scale-down-weak);
+		}
+	}
+
+	@if $active {
+		&:active {
+			transform: var(--#{$prefix}-motion-transform-scale-down-medium);
+		}
+	}
+}

@@ -1,0 +1,25 @@
+@mixin header-nav-menu() {
+	position: relative;
+	@include flex(row, var(--#{$prefix}-space-inner-1));
+	align-items: center;
+	padding-left: 0;
+	list-style: none;
+}
+
+@mixin header-nav-menu-collapsed() {
+	position: absolute;
+	top:calc(100% + var(--#{$prefix}-space-inner-4));
+	left: auto;
+	right: 0;
+	display: none;
+	flex-direction: column;
+	align-items: stretch;
+	padding: var(--#{$prefix}-space-inner-1);
+	border-radius: var(--#{$prefix}-border-radius-3);
+	background-color: var(--#{$prefix}-color-surface-primary-solid);
+	box-shadow: var(--#{$prefix}-shadow-level-3);
+
+	&::before {
+		display: block;
+	}
+}

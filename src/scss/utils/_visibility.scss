@@ -1,0 +1,21 @@
+.visibility {
+	&-visible {
+		visibility: visible !important;
+	}
+
+	&-hidden {
+		visibility: hidden !important;
+	}
+
+	@each $key, $val in $grid {
+		@media (width >= #{map-get($val,breakpoint)}) {
+			&-#{$key}-visible {
+				visibility: visible !important;
+			}
+		
+			&-#{$key}-hidden {
+				visibility: hidden !important;
+			}
+		}
+	}
+}

@@ -1,0 +1,11 @@
+.checkbox {
+	min-width: 1rem;
+	min-height: 1rem;
+	outline-offset: 0;
+	outline: var(--#{$prefix}-color-theme-base-tone) solid 0;
+	cursor: pointer;
+
+	&:focus-visible {
+		outline-width: var(--#{$prefix}-space-inner-1);
+	}
+}

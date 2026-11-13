@@ -1,0 +1,51 @@
+.pointer-events {
+	&-none {
+		pointer-events: none !important;
+	}
+
+	&-auto {
+		pointer-events: auto !important;
+	}
+
+	@each $key, $val in $grid {
+		@media (width >= #{map-get($val,breakpoint)}) {
+			&-#{$key}-none {
+				pointer-events: none !important;
+			}
+		
+			&-#{$key}-auto {
+				pointer-events: auto !important;
+			}
+		}
+	}
+}
+
+.user-select {
+	&-all {
+		user-select: all !important;
+	}
+
+	&-auto {
+		user-select: auto !important;
+	}
+
+	&-none {
+		user-select: none !important;
+	}
+
+	@each $key, $val in $grid {
+		@media (width >= #{map-get($val,breakpoint)}) {
+			&-#{$key}-all {
+				user-select: all !important;
+			}
+		
+			&-#{$key}-auto {
+				user-select: auto !important;
+			}
+		
+			&-#{$key}-none {
+				user-select: none !important;
+			}
+		}
+	}
+}

@@ -1,0 +1,45 @@
+.object-fit {
+	&-contain {
+		object-fit: contain !important;
+	}
+
+	&-cover {
+		object-fit: cover !important;
+	}
+
+	&-fill {
+		object-fit: fill !important;
+	}
+
+	&-scale {
+		object-fit: scale-down !important;
+	}
+
+	&-none {
+		object-fit: none !important;
+	}
+
+	@each $key, $val in $grid {
+		@media (width >= #{map-get($val,breakpoint)}) {
+			&-#{$key}-contain {
+				object-fit: contain !important;
+			}
+		
+			&-#{$key}-cover {
+				object-fit: cover !important;
+			}
+		
+			&-#{$key}-fill {
+				object-fit: fill !important;
+			}
+		
+			&-#{$key}-scale {
+				object-fit: scale-down !important;
+			}
+		
+			&-#{$key}-none {
+				object-fit: none !important;
+			}
+		}
+	}
+}

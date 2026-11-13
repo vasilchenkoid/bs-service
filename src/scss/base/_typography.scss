@@ -1,0 +1,12 @@
+@each $t-key, $t-val in $typography {
+	@each $v-key, $v-val in map-get($t-val,variants) {
+		.text-style-#{$t-key}-#{$v-key} {
+			@include typography(#{$t-key});
+			@include typography-size(#{$t-key},#{$v-key});
+		}
+		.text-style-#{$t-key}-#{$v-key}-bolder {
+			@include typography(#{$t-key}, true);
+			@include typography-size(#{$t-key},#{$v-key});
+		}
+	}
+}

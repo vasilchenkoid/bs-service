@@ -1,0 +1,224 @@
+@for $i from 0 through $space-number {
+
+	// gap
+
+	.gap-#{$i} {
+		gap: var(--#{$prefix}-space-inner-#{$i}) !important;
+	}
+
+	.row-gap-#{$i} {
+		row-gap: var(--#{$prefix}-space-inner-#{$i}) !important;
+	}
+
+	.col-gap-#{$i} {
+		column-gap: var(--#{$prefix}-space-inner-#{$i}) !important;
+	}
+
+	@each $key, $val in $grid {
+		@media (width >= #{map-get($val,breakpoint)}) {
+			.gap-#{$key}-#{$i} {
+				gap: var(--#{$prefix}-space-inner-#{$i}) !important;
+			}
+		
+			.row-gap-#{$key}-#{$i} {
+				row-gap: var(--#{$prefix}-space-inner-#{$i}) !important;
+			}
+		
+			.col-gap-#{$key}-#{$i} {
+				column-gap: var(--#{$prefix}-space-inner-#{$i}) !important;
+			}
+		}
+	}
+
+	// padding
+
+	.p {
+		&-#{$i} {
+			padding: var(--#{$prefix}-space-inner-#{$i}) !important;
+		}
+
+		&x-#{$i} {
+			padding-inline: var(--#{$prefix}-space-inner-#{$i}) !important;
+		}
+
+		&y-#{$i} {
+			padding-block: var(--#{$prefix}-space-inner-#{$i}) !important;
+		}
+
+		&t-#{$i} {
+			padding-top: var(--#{$prefix}-space-inner-#{$i}) !important;
+		}
+
+		&b-#{$i} {
+			padding-bottom: var(--#{$prefix}-space-inner-#{$i}) !important;
+		}
+
+		&l-#{$i} {
+			padding-left: var(--#{$prefix}-space-inner-#{$i}) !important;
+		}
+
+		&r-#{$i} {
+			padding-right: var(--#{$prefix}-space-inner-#{$i}) !important;
+		}
+
+		@each $key, $val in $grid {
+			@media (width >= #{map-get($val,breakpoint)}) {
+				&-#{$key}-#{$i} {
+					padding: var(--#{$prefix}-space-inner-#{$i}) !important;
+				}
+			
+				&x-#{$key}-#{$i} {
+					padding-inline: var(--#{$prefix}-space-inner-#{$i}) !important;
+				}
+			
+				&y-#{$key}-#{$i} {
+					padding-block: var(--#{$prefix}-space-inner-#{$i}) !important;
+				}
+
+				&t-#{$key}-#{$i} {
+					padding-top: var(--#{$prefix}-space-inner-#{$i}) !important;
+				}
+			
+				&b-#{$key}-#{$i} {
+					padding-bottom: var(--#{$prefix}-space-inner-#{$i}) !important;
+				}
+			
+				&l-#{$key}-#{$i} {
+					padding-left: var(--#{$prefix}-space-inner-#{$i}) !important;
+				}
+			
+				&r-#{$key}-#{$i} {
+					padding-right: var(--#{$prefix}-space-inner-#{$i}) !important;
+				}
+			}
+		}
+	}
+
+	// margin
+
+	.m {
+		&-#{$i} {
+			margin: var(--#{$prefix}-space-inner-#{$i}) !important;
+		}
+
+		&x-#{$i} {
+			margin-inline: var(--#{$prefix}-space-inner-#{$i}) !important;
+		}
+
+		&y-#{$i} {
+			margin-block: var(--#{$prefix}-space-inner-#{$i}) !important;
+		}
+
+		&t-#{$i} {
+			margin-top: var(--#{$prefix}-space-inner-#{$i}) !important;
+		}
+
+		&b-#{$i} {
+			margin-bottom: var(--#{$prefix}-space-inner-#{$i}) !important;
+		}
+
+		&l-#{$i} {
+			margin-left: var(--#{$prefix}-space-inner-#{$i}) !important;
+		}
+
+		&r-#{$i} {
+			margin-right: var(--#{$prefix}-space-inner-#{$i}) !important;
+		}
+
+		@each $key, $val in $grid {
+			@media (width >= #{map-get($val,breakpoint)}) {
+				&-#{$key}-#{$i} {
+					margin: var(--#{$prefix}-space-inner-#{$i}) !important;
+				}
+		
+				&x-#{$key}-#{$i} {
+					margin-inline: var(--#{$prefix}-space-inner-#{$i}) !important;
+				}
+		
+				&y-#{$key}-#{$i} {
+					margin-block: var(--#{$prefix}-space-inner-#{$i}) !important;
+				}
+		
+				&t-#{$key}-#{$i} {
+					margin-top: var(--#{$prefix}-space-inner-#{$i}) !important;
+				}
+		
+				&b-#{$key}-#{$i} {
+					margin-bottom: var(--#{$prefix}-space-inner-#{$i}) !important;
+				}
+		
+				&l-#{$key}-#{$i} {
+					margin-left: var(--#{$prefix}-space-inner-#{$i}) !important;
+				}
+		
+				&r-#{$key}-#{$i} {
+					margin-right: var(--#{$prefix}-space-inner-#{$i}) !important;
+				}
+			}
+		}
+	}
+}
+
+// margin-auto
+
+.m {
+	&-auto {
+		margin: auto !important;
+	}
+
+	&x-auto {
+		margin-inline: auto !important;
+	}
+
+	&y-auto {
+		margin-block: auto !important;
+	}
+
+	&t-auto {
+		margin-top: auto !important;
+	}
+
+	&b-auto {
+		margin-bottom: auto !important;
+	}
+
+	&l-auto {
+		margin-left: auto !important;
+	}
+
+	&r-auto {
+		margin-right: auto !important;
+	}
+
+	@each $key, $val in $grid {
+		@media (width >= #{map-get($val,breakpoint)}) {
+			&-#{$key}-auto {
+				margin: auto !important;
+			}
+		
+			&x-#{$key}-auto {
+				margin-inline: auto !important;
+			}
+		
+			&y-#{$key}-auto {
+				margin-block: auto !important;
+			}
+		
+			&t-#{$key}-auto {
+				margin-top: auto !important;
+			}
+		
+			&b-#{$key}-auto {
+				margin-bottom: auto !important;
+			}
+		
+			&l-#{$key}-auto {
+				margin-left: auto !important;
+			}
+		
+			&r-#{$key}-auto {
+				margin-right: auto !important;
+			}
+		}
+	}
+}

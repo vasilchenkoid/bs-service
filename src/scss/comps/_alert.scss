@@ -1,0 +1,26 @@
+.alert {
+	@include flex-center(row, var(--#{$prefix}-space-inner-4));
+	justify-content: space-between;
+	width: 100%;
+	padding: var(--#{$prefix}-space-inner-2) var(--#{$prefix}-space-inner-4);
+	border-radius: var(--#{$prefix}-border-radius-2);
+	background-color: var(--#{$prefix}-color-theme-base-tone);
+	color: var(--#{$prefix}-color-theme-base-text);
+
+	&-body {
+		@include flex(row, var(--#{$prefix}-space-inner-4));
+		align-items: center;
+	}
+
+	&-close {
+		margin-block: calc(-1 * var(--#{$prefix}-space-inner-1));
+		margin-right: calc(-1 * var(--#{$prefix}-space-inner-2));
+	}
+
+	@each $key, $val in map-get($colors,theme) {
+		&-#{$key} {
+			background-color: var(--#{$prefix}-color-theme-#{$key}-tone);
+			color: var(--#{$prefix}-color-theme-#{$key}-text);
+		}
+	}
+}

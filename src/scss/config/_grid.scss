@@ -1,0 +1,40 @@
+$cols: 12;
+
+$container: (
+	default: 75em,   // 1200
+	large:   87.5em, // 1400
+	xlarge:  100em   // 1600
+);
+
+$grid: (
+	xs: (
+		breakpoint: 37.5em, // 600
+		gap: (default: 1.25rem, large: 2rem, xlarge: 2.5rem), // 20-32-40
+		section-space: (default: 4rem, small: 3rem, xsmall: 2rem) // 64-48-32
+	),
+	sm: (
+		breakpoint: 50em, // 800
+		gap: (default: 1.25rem, large: 2rem, xlarge: 3rem), // 20-32-48
+		section-space: (default: 6rem, small: 4.5rem, xsmall: 3rem) // 96-72-48
+	),
+	md: (
+		breakpoint: 62.5em, // 1000
+		gap: (default: 1.25rem, large: 2rem, xlarge: 3rem), // 20-32-48
+		section-space: (default: 6rem, small: 4.5rem, xsmall: 3rem) // 96-72-48
+	),
+	lg: (
+		breakpoint: 75em, // 1200
+		gap: (default: 1.25rem, large: 2.5rem, xlarge: 3.75rem), // 20-40-60
+		section-space: (default: 8rem, small: 6rem, xsmall: 4rem) // 128-96-64
+	),
+	xl: (
+		breakpoint: 87.5em, // 1400
+		gap: (default: 1.25rem, large: 2.5rem, xlarge: 3.75rem), // 20-40-60
+		section-space: (default: 8rem, small: 6rem, xsmall: 4rem) // 128-96-64
+	),
+	xxl: (
+		breakpoint: 100em, // 1600
+		gap: (default: 1.25rem, large: 2.5rem, xlarge: 3.75rem), // 20-40-60
+		section-space: (default: 8rem, small: 6rem, xsmall: 4rem) // 128-96-64
+	)
+);

@@ -1,0 +1,37 @@
+.badge {
+	flex-shrink: 0;
+	@include flex-center(row, var(--#{$prefix}-space-inner-1));
+	min-width: var(--#{$prefix}-size-comp-height-xs);
+	min-height: var(--#{$prefix}-size-comp-height-xs);
+	padding: var(--#{$prefix}-space-inner-1) var(--#{$prefix}-space-inner-2);
+	border-radius: var(--#{$prefix}-border-radius-round);
+	@include typography(body, true);
+	@include typography-size(body, small);
+	background-color: var(--#{$prefix}-color-theme-base-default);
+	color: var(--#{$prefix}-color-text-inverse-main);
+
+	&.dot,
+	&.empty,
+	&:empty {
+		min-width: 0.5rem;
+		min-height: 0.5rem;
+		padding: 0;
+	}
+
+	&-tonal {
+		background-color: var(--#{$prefix}-color-theme-base-tone);
+		color: var(--#{$prefix}-color-theme-base-text);
+	}
+
+	@each $key, $val in map-get($colors,theme) {
+		&-#{$key} {
+			background-color: var(--#{$prefix}-color-theme-#{$key}-default);
+			color: foreground(map-get($val, default, foreground));
+		}
+
+		&-#{$key}-tonal {
+			background-color: var(--#{$prefix}-color-theme-#{$key}-tone);
+			color: var(--#{$prefix}-color-theme-#{$key}-text);
+		}
+	}
+}

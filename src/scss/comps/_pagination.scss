@@ -1,0 +1,47 @@
+.pagination {
+	display: flex;
+	gap: var(--#{$prefix}-space-inner-1);
+	height: var(--#{$prefix}-size-comp-height-md);
+	padding-left: 0;
+	list-style: none;
+	overflow: hidden;
+
+	& > * {
+		@include flex-center(row, var(--#{$prefix}-space-inner-2));
+		min-width: var(--#{$prefix}-size-comp-height-md);
+		padding-inline: var(--#{$prefix}-space-inner-2);
+		border-radius: var(--#{$prefix}-border-radius-2);
+
+		&:hover {
+			background-color: var(--#{$prefix}-color-theme-base-layer);
+		}
+
+		&:active {
+			background-color: var(--#{$prefix}-color-theme-base-tone);
+		}
+	}
+
+	.active {
+		background-color: var(--#{$prefix}-color-theme-base-default);
+		color: var(--#{$prefix}-color-text-inverse-main);
+		@include typography(body, true);
+	}
+
+	&-sm {
+		height: var(--#{$prefix}-size-comp-height-sm);
+
+		& > * {
+			min-width: var(--#{$prefix}-size-comp-height-sm);
+			border-radius: var(--#{$prefix}-border-radius-1);
+		}
+	}
+
+	&-lg {
+		height: var(--#{$prefix}-size-comp-height-lg);
+
+		& > * {
+			min-width: var(--#{$prefix}-size-comp-height-lg);
+			border-radius: var(--#{$prefix}-border-radius-3);
+		}
+	}
+}

@@ -1,0 +1,136 @@
+:root,
+::backdrop {
+
+	// blur
+
+	@each $key, $val in $blur {
+		--#{$prefix}-blur-#{$key}: #{$val};
+	}
+
+	// border-radius
+
+	@each $key, $val in $border-radius {
+		--#{$prefix}-border-radius-#{$key}: #{$val};
+	}
+
+	// grid
+
+	--#{$prefix}-grid-columns: #{$cols};
+
+	@each $key, $val in $container {
+		--#{$prefix}-grid-container-#{$key}: #{$val};
+	}
+
+	$prev-breakpoint: null;
+
+	@each $g-key, $g-val in $grid {
+		@if $prev-breakpoint == null {
+			@each $b-key, $b-val in map-get($grid,$g-key,gap) {
+				--#{$prefix}-grid-gutter-#{$b-key}: #{$b-val};
+			}
+			@each $b-key, $b-val in map-get($grid,$g-key,section-space) {
+				--#{$prefix}-grid-section-space-#{$b-key}: #{$b-val};
+			}
+		}
+
+		@media (width >= #{map-get($g-val,breakpoint)}) {
+			@each $b-key, $b-val in map-get($g-val,gap) {
+				--#{$prefix}-grid-gutter-#{$b-key}: #{$b-val};
+			}
+			@each $b-key, $b-val in map-get($g-val,section-space) {
+				--#{$prefix}-grid-section-space-#{$b-key}: #{$b-val};
+			}
+		}
+
+		$prev-breakpoint: $g-key;
+	}
+
+	--local-grid-gutter: var(--#{$prefix}-grid-gutter-default);
+
+	// motion
+
+	--#{$prefix}-motion-duration-slow:   calc(#{map-get($unit,duration)} * 3);
+	--#{$prefix}-motion-duration-medium: calc(#{map-get($unit,duration)} * 2);
+	--#{$prefix}-motion-duration-fast:   calc(#{map-get($unit,duration)} * 1);
+
+	--#{$prefix}-motion-transform-scale-up-none:   scale(1);
+	--#{$prefix}-motion-transform-scale-up-weak:   scale(calc(1 + #{map-get($unit,scale)} * 1));
+	--#{$prefix}-motion-transform-scale-up-medium: scale(calc(1 + #{map-get($unit,scale)} * 2));
+	--#{$prefix}-motion-transform-scale-up-strong: scale(calc(1 + #{map-get($unit,scale)} * 3));
+
+	--#{$prefix}-motion-transform-scale-down-none:   scale(1);
+	--#{$prefix}-motion-transform-scale-down-weak:   scale(calc(1 - #{map-get($unit,scale)} * 1));
+	--#{$prefix}-motion-transform-scale-down-medium: scale(calc(1 - #{map-get($unit,scale)} * 2));
+	--#{$prefix}-motion-transform-scale-down-strong: scale(calc(1 - #{map-get($unit,scale)} * 3));
+
+	// opacity
+
+	@each $key, $val in $opacity {
+		--#{$prefix}-opacity-#{$key}: #{$val};
+	}
+
+	// ratio
+
+	@each $key, $val in $ratio {
+		--#{$prefix}-ratio-#{$key}: #{$val};
+	}
+
+	// shadow
+
+	--#{$prefix}-shadow-level-0: none;
+	--#{$prefix}-shadow-level-1: 0 1px calc(#{map-get($unit,base)} * 1) var(--#{$prefix}-color-special-shadow-primary);
+	--#{$prefix}-shadow-level-2: 0 calc(#{map-get($unit,base)} / 2) calc(#{map-get($unit,base)} * 2) var(--#{$prefix}-color-special-shadow-primary);
+	--#{$prefix}-shadow-level-3: 0 calc(#{map-get($unit,base)} * 1) calc(#{map-get($unit,base)} * 4) var(--#{$prefix}-color-special-shadow-primary);
+	--#{$prefix}-shadow-level-4: 0 calc(#{map-get($unit,base)} * 2) calc(#{map-get($unit,base)} * 8) var(--#{$prefix}-color-special-shadow-primary);
+	--#{$prefix}-shadow-level-5: 0 calc(#{map-get($unit,base)} * 4) calc(#{map-get($unit,base)} * 16) var(--#{$prefix}-color-special-shadow-primary);
+
+	// size
+
+	@each $key, $val in $comp-height {
+		--#{$prefix}-size-comp-height-#{$key}: #{$val};
+	}
+
+	@each $key, $val in $comp-width {
+		--#{$prefix}-size-comp-width-#{$key}: #{$val};
+	}
+
+	@each $key, $val in $modal-size {
+		--#{$prefix}-size-modal-#{$key}: #{$val};
+	}
+
+	// space
+
+	@for $i from 0 through $space-number {
+		--#{$prefix}-space-inner-#{$i}: calc(#{map-get($unit,base)} * #{$i});
+	}
+
+	@for $i from 0 through $space-number {
+		--#{$prefix}-space-outer-#{$i}: calc(#{map-get($unit,base)} * #{$i} * 4);
+	}
+
+	// typography
+
+	@each $t-key, $t-val in $typography { // body, heading, display, code
+		@each $p-key, $p-val in $t-val { // font, weight, bolder, variants
+			@if $p-key != variants {
+				--#{$prefix}-typography-#{$t-key}-#{$p-key}: #{$p-val};
+			} @else {
+				@each $v-key, $v-val in $p-val { // small, main, h4, h3, h2, h1
+					@each $pv-key, $pv-val in $v-val { // size, lh
+						--#{$prefix}-typography-#{$t-key}-#{$v-key}-#{$pv-key}: #{$pv-val};
+					}
+				}
+			}
+		}
+	}
+
+	@each $key, $val in $icon-size {
+		--#{$prefix}-icon-size-#{$key}: #{$val};
+	}
+
+	// z-index
+
+	@each $key, $val in $z-index {
+		--#{$prefix}-z-index-#{$key}: #{$val};
+	}
+}

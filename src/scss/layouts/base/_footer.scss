@@ -1,0 +1,49 @@
+.footer {
+	padding-block: var(--#{$prefix}-space-outer-2);
+
+	@include header-footer();
+
+	.container,
+	.container-fluid,
+	&-section {
+		flex-wrap: wrap;
+	}
+
+	&-nav {
+		@include footer-nav-menu();
+
+		&-toggle {
+			@include button(var(--#{$prefix}-space-inner-3));
+			flex-direction: column;
+			gap: var(--#{$prefix}-space-inner-1);
+			width: var(--#{$prefix}-size-comp-height-md);
+			border: 1px solid var(--#{$prefix}-color-theme-base-border);
+
+			&::before,
+			&::after {
+				content: '';
+				display: block;
+				width: 100%;
+				height: 1px;
+				border-radius: var(--#{$prefix}-border-radius-round);
+				background-color: var(--#{$prefix}-color-text-primary-main);
+			}
+
+			&:focus-visible {
+				outline-width: var(--#{$prefix}-space-inner-1);
+			}
+		}
+
+		&-menu {
+			@include footer-nav-menu();
+		}
+
+		&-item {
+			@include flex(row, var(--#{$prefix}-space-inner-2));
+			align-items: center;
+			color: var(--#{$prefix}-color-text-primary-main);
+			@include typography(body, true);
+			@include typography-size(body, main);
+		}
+	}
+}

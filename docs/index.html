@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/lorvin.min.css">
+	<title>base - lorvin</title>
+</head>
+<body>
+	<header class="header position-sticky-top bg-surface-primary shadow-level-5">
+		<div class="container">
+			<div class="header-section">
+				<a class="header-brand" href="app.html">
+					<img src="img/logo.svg">
+					<span>Lorvin</span>
+				</a>
+
+				<form class="header-form">
+					<input class="input" type="search" placeholder="Search">
+				</form>
+			</div>
+
+			<div class="header-section">
+				<nav class="header-nav expand-md expand-right">
+					<button class="header-nav-toggle"></button>
+					<div class="header-nav-menu">
+						<a class="header-nav-item active" href="">
+							<i class="icon">star</i>
+							<span>Home</span>
+						</a>
+						<a class="header-nav-item" href="">
+							<i class="icon">star</i>
+							<span>About</span>
+						</a>
+						<a class="header-nav-item" href="">
+							<i class="icon">star</i>
+							<span>Contact</span>
+						</a>
+					</div>
+				</nav>
+
+				<div class="header-actions">
+					<button class="btn btn-outline-primary">
+						<i class="icon">star</i>
+						<span>Hello</span>
+					</button>
+					<button class="btn btn-solid-primary">
+						<i class="icon">star</i>
+						<span>How are you?</span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<section class="section section-hero">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-7 flex-col align-items-start gap-6">
+					<h1 class="text-style-display-h1">Lorem ipsum dolor sit <mark>amet</mark></h1>
+					<p class="text-style-body-main-bolder color-label">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+					<div class="d-flex align-items-center gap-6">
+						<button class="btn btn-solid tooltip" onclick="document.getElementById('modal-1').showModal()">
+							<div class="tooltip-content">Open modal</div>
+							<span>Hello</span>
+						</button>
+
+						<button class="btn btn-solid btn-icon-only dropdown">
+							<!-- <i class="icon">star</i>
+							<span>Dropdown</span> -->
+
+							<div class="dropdown-menu">
+								<a href="#" class="dropdown-item">
+									<i class="icon">star</i>
+									<span>Hello</span>
+								</a>
+								<a href="#" class="dropdown-item">
+									<i class="icon">star</i>
+									<span>And</span>
+								</a>
+								<a href="#" class="dropdown-item">
+									<i class="icon">star</i>
+									<span>Lets go</span>
+								</a>
+							</div>
+						</button>
+
+						<div class="loader loader-subtle"></div>
+					</div>
+				</div>
+				<div class="col">
+					<!-- <img class="hero-image"> -->
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<dialog class="modal modal-sm" id="modal-1">
+		<div class="modal-header shadow-level-3">
+			<span class="modal-title">
+				<i class="icon">star</i>
+				<span>Modal</span>
+			</span>
+			<button class="btn btn-icon-only" onclick="document.getElementById('modal-1').close()">
+				<i class="icon">close</i>
+			</button>
+		</div>
+		<div class="modal-body">
+			<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque aperiam rem quidem a fuga eum ipsa nobis voluptas iste, esse sit assumenda quis repellendus perferendis aliquid asperiores vel nisi consequatur!</p>
+
+			<form class="form">
+				<div class="form-field">
+					<label class="label">Field</label>
+					<input class="input input-color" type="color" />
+				</div>
+				<div class="form-field">
+					<label class="label">Field</label>
+					<input class="input" type="text" placeholder="Input" />
+				</div>
+				<textarea class="input" placeholder="Textarea"></textarea>
+				<select class="input">
+					<option value="1">One</option>
+					<option value="2">Two</option>
+					<option value="3">Three</option>
+				</select>
+				<div class="flex-row align-items-center gap-2">
+					<input class="checkbox" id="check" type="checkbox">
+					<label for="check">Checkbox</label>
+				</div>
+				<div class="flex-row align-items-center gap-2">
+					<input class="radio" id="radio" type="radio">
+					<label for="radio">Checkbox</label>
+				</div>
+				<input class="range" type="range">
+			</form>
+		</div>
+		<div class="modal-footer shadow-level-3">
+			<div class="modal-actions">
+				<button class="btn btn-outline-primary" onclick="document.getElementById('modal-1').close()">Cancel</button>
+				<button class="btn btn-primary">Go</button>
+			</div>
+		</div>
+	</dialog>
+
+	<section class="section">
+		<div class="container">
+			<h2>Section</h2>
+
+			<div class="quote">
+				<!-- <div class="quote-content">Lorem ipsum dolor sit amet.</div> -->
+				<div class="quote-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. At est fugiat cumque dolorem possimus natus repudiandae eius explicabo suscipit ipsa aliquam quia et dicta, pariatur inventore voluptate sequi dolorum debitis.</div>
+				<div class="quote-source">Source</div>
+			</div>
+
+			<div class="breadcrumbs">
+				<a href="#">Home</a>
+				<span>/</span>
+				<a href="#">Catalog</a>
+				<span>/</span>
+				<a href="#">Section</a>
+			</div>
+
+			<div class="button-group">
+				<button class="btn btn-tonal-primary">Hello</button>
+				<button class="btn btn-tonal-primary">How</button>
+				<button class="btn btn-tonal-primary">Are</button>
+				<button class="btn btn-tonal-primary">You</button>
+			</div>
+
+			<div class="pagination">
+				<a href="#">
+					<i class="icon">chevron_left</i>
+				</a>
+				<a href="#">
+					<span>1</span>
+				</a>
+				<a href="#">
+					<span>2</span>
+				</a>
+				<a class="active" href="#">
+					<span>3</span>
+				</a>
+				<a href="#">
+					<span>4</span>
+				</a>
+				<a href="#">
+					<span>5</span>
+				</a>
+				<a href="#">
+					<i class="icon">chevron_right</i>
+				</a>
+			</div>
+
+			<div class="carousel">
+				<div class="card border-all" style="width: 200px;">
+					<div class="card-body">card</div>
+				</div>
+				<div class="card border-all" style="width: 200px;">
+					<div class="card-body">card</div>
+				</div>
+				<div class="card border-all" style="width: 200px;">
+					<div class="card-body">card</div>
+				</div>
+				<div class="card border-all" style="width: 200px;">
+					<div class="card-body">card</div>
+				</div>
+				<div class="card border-all" style="width: 200px;">
+					<div class="card-body">card</div>
+				</div>
+				<div class="card border-all" style="width: 200px;">
+					<div class="card-body">card</div>
+				</div>
+				<div class="card border-all" style="width: 200px;">
+					<div class="card-body">card</div>
+				</div>
+				<div class="card border-all" style="width: 200px;">
+					<div class="card-body">card</div>
+				</div>
+			</div>
+
+			<ul class="list">
+				<li>
+					<details class="accordion">
+						<summary class="accordion-header">
+							<i class="icon">star</i>
+							<span class="w-100">Accordion</span>
+							<span class="badge">1</span>
+						</summary>
+						<div class="accordion-body">
+							<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore ab ea maxime aspernatur vel quae saepe voluptas non quod, amet rerum magnam consectetur rem hic accusamus aut dignissimos tempora. Veniam!</p>
+							<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore ab ea maxime aspernatur vel quae saepe voluptas non quod, amet rerum magnam consectetur rem hic accusamus aut dignissimos tempora. Veniam!</p>
+						</div>
+					</details>
+				</li>
+				<li>How</li>
+				<li>Are</li>
+				<li>You</li>
+				<li>Now</li>
+			</ul>
+
+			<span class="badge badge-info">
+				<!-- <i class="icon">star</i> -->
+				<span>NEW</span>
+			</span>
+
+			<progress class="progress progress-primary" value="25" max="100"></progress>
+
+			<div class="card bg-surface-primary shadow-level-3">
+				<div class="card-body">
+					<span>Hello!</span>
+					<span>How are you?</span>
+				</div>
+			</div>
+
+			<div class="code-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta et culpa ratione totam libero harum a odio dolores ut maxime distinctio voluptate, blanditiis aperiam aut qui. Dignissimos cum consequatur repellat.</div>
+
+			<div class="alert alert-info">
+				<div class="alert-body">
+					<i class="icon">star</i>
+					<span>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</span>
+				</div>
+				<button class="alert-close btn btn-text-info btn-icon-only">
+					<i class="icon">close</i>
+				</button>
+			</div>
+
+			<div class="callout callout-info">
+				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora ut alias, dolor distinctio ipsa deserunt. Voluptatibus deleniti necessitatibus, deserunt expedita cupiditate ad asperiores dolorum obcaecati rerum, error, quod recusandae modi.</p>
+				<a class="btn btn-info" href="#">Learn more</a>
+			</div>
+
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, odit repudiandae ipsa, velit, fuga eligendi cumque adipisci rem sequi optio aliquam unde. Excepturi eveniet deserunt iste placeat perspiciatis, eligendi aut?</p>
+
+			<div class="nav">
+				<a href="" class="nav-item active">
+					<i class="icon">star</i>
+					<span>Home</span>
+				</a>
+				<a href="" class="nav-item">
+					<i class="icon">star</i>
+					<span>About</span>
+				</a>
+				<a href="" class="nav-item">
+					<i class="icon">star</i>
+					<span>Contacts</span>
+				</a>
+			</div>
+
+			<details class="accordion">
+				<summary class="accordion-header">
+					<i class="icon">star</i>
+					<span class="w-100">Accordion</span>
+					<span class="badge">1</span>
+				</summary>
+				<div class="accordion-body">
+					<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore ab ea maxime aspernatur vel quae saepe voluptas non quod, amet rerum magnam consectetur rem hic accusamus aut dignissimos tempora. Veniam!</p>
+					<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore ab ea maxime aspernatur vel quae saepe voluptas non quod, amet rerum magnam consectetur rem hic accusamus aut dignissimos tempora. Veniam!</p>
+				</div>
+			</details>
+
+			<form class="form">
+				<div class="row">
+					<div class="col">
+						<fieldset class="fieldset">
+							<legend>Block</legend>
+							<div class="form-field">
+								<label class="label">Field</label>
+								<input class="input input-color" type="color" />
+							</div>
+							<div class="form-field">
+								<label class="label">Field</label>
+								<input class="input" type="text" placeholder="Input" />
+							</div>
+							<textarea class="input" placeholder="Textarea"></textarea>
+							<select class="input">
+								<option value="1">One</option>
+								<option value="2">Two</option>
+								<option value="3">Three</option>
+							</select>
+							<div class="flex-row align-items-center gap-2">
+								<input class="checkbox" id="check" type="checkbox">
+								<label for="check">Checkbox</label>
+							</div>
+							<div class="flex-row align-items-center gap-2">
+								<input class="radio" id="radio" type="radio">
+								<label for="radio">Checkbox</label>
+							</div>
+							<input class="range" type="range">
+							<a class="btn btn-solid-primary" href="">
+								<i class="icon">star</i>
+								<span>Add</span>
+							</a>
+						</fieldset>
+					</div>
+					<div class="col">
+						<fieldset class="fieldset">
+							<legend>Block</legend>
+							<div class="form-field">
+								<label class="label">Field</label>
+								<input class="input input-color" type="color" />
+							</div>
+							<div class="form-field">
+								<label class="label">Field</label>
+								<input class="input" type="text" placeholder="Input" />
+							</div>
+							<textarea class="input" placeholder="Textarea"></textarea>
+							<select class="input">
+								<option value="1">One</option>
+								<option value="2">Two</option>
+								<option value="3">Three</option>
+							</select>
+							<div class="flex-row align-items-center gap-2">
+								<input class="checkbox" id="check" type="checkbox">
+								<label for="check">Checkbox</label>
+							</div>
+							<div class="flex-row align-items-center gap-2">
+								<input class="radio" id="radio" type="radio">
+								<label for="radio">Checkbox</label>
+							</div>
+							<input class="range" type="range">
+						</fieldset>
+					</div>
+				</div>
+			</form>
+
+			<table class="table table-bordered-rows table-danger">
+				<thead>
+					<tr>
+						<th>cell</th>
+						<th>cell</th>
+						<th>cell</th>
+						<th>cell</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>cell</th>
+						<td>cell</td>
+						<td>cell</td>
+						<td>cell</td>
+					</tr>
+					<tr>
+						<th>cell</th>
+						<td>cell</td>
+						<td>cell</td>
+						<td>cell</td>
+					</tr>
+					<tr>
+						<th>cell</th>
+						<td>cell</td>
+						<td>cell</td>
+						<td>cell</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<th>cell</th>
+						<td>cell</td>
+						<td>cell</td>
+						<td>cell</td>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+	</section>
+
+	<footer class="footer bg-surface-secondary">
+		<div class="container">
+			<div class="footer-section">
+				<a class="footer-brand" href="app.html">
+					<img src="img/logo.svg">
+					<span>Lorvin</span>
+				</a>
+
+				<nav class="footer-nav">
+					<!-- <div class="footer-nav-toggle"></div> -->
+					<div class="footer-nav-menu">
+						<a class="footer-nav-item active" href="">
+							<i class="icon">star</i>
+							<span>Home</span>
+						</a>
+						<a class="footer-nav-item" href="">
+							<i class="icon">star</i>
+							<span>About</span>
+						</a>
+						<a class="footer-nav-item" href="">
+							<i class="icon">star</i>
+							<span>Contact</span>
+						</a>
+					</div>
+				</nav>
+			</div>
+
+			<div class="footer-section">
+				<span class="footer-text">Copyright, 2023</span>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

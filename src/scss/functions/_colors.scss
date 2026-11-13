@@ -1,0 +1,15 @@
+@function hex-rgba($hex: #000000, $opacity: 0.0) {
+	@return 'rgb(#{red($hex)} #{green($hex)} #{blue($hex)} / #{$opacity * 100%})';
+}
+
+@function foreground($fg) {
+	@if ($fg == black) {
+		@return #000000;
+	} @else if ($fg == primary) {
+		@return var(--#{$prefix}-color-text-primary-main);
+	} @else if ($fg == inverse) {
+		@return var(--#{$prefix}-color-text-inverse-main);
+	} @else {
+		@return #FFFFFF;
+	}
+}

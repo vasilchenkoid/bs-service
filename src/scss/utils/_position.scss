@@ -1,0 +1,171 @@
+.position {
+	&-static {
+		position: static !important;
+	}
+
+	&-relative {
+		position: relative !important;
+	}
+
+	&-absolute {
+		position: absolute !important;
+	}
+
+	&-fixed {
+		position: fixed !important;
+
+		&-top {
+			position: fixed !important;
+			top: 0;
+			left: 0;
+			right: 0;
+			z-index: var(--#{$prefix}-z-index-fixed);
+		}
+
+		&-bottom {
+			position: fixed !important;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			z-index: var(--#{$prefix}-z-index-fixed);
+		}
+	}
+
+	&-sticky {
+		position: sticky !important;
+
+		&-top {
+			position: sticky !important;
+			top: 0;
+			z-index: var(--#{$prefix}-z-index-sticky);
+		}
+
+		&-bottom {
+			position: sticky !important;
+			bottom: 0;
+			z-index: var(--#{$prefix}-z-index-sticky);
+		}
+	}
+
+	@each $key, $val in $grid {
+		@media (width >= #{map-get($val,breakpoint)}) {
+			&-#{$key}-static {
+				position: static !important;
+			}
+		
+			&-#{$key}-relative {
+				position: relative !important;
+			}
+		
+			&-#{$key}-absolute {
+				position: absolute !important;
+			}
+		
+			&-#{$key}-fixed {
+				position: fixed !important;
+		
+				&-top {
+					position: fixed !important;
+					top: 0;
+					left: 0;
+					right: 0;
+					z-index: var(--#{$prefix}-z-index-fixed);
+				}
+		
+				&-bottom {
+					position: fixed !important;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					z-index: var(--#{$prefix}-z-index-fixed);
+				}
+			}
+		
+			&-#{$key}-sticky {
+				position: sticky !important;
+		
+				&-top {
+					position: sticky !important;
+					top: 0;
+					z-index: var(--#{$prefix}-z-index-sticky);
+				}
+		
+				&-bottom {
+					position: sticky !important;
+					bottom: 0;
+					z-index: var(--#{$prefix}-z-index-sticky);
+				}
+			}
+		}
+	}
+}
+
+@for $i from 0 through 4 {
+	.top-#{$i * 25} {
+		top: #{$i * 25%} !important;
+	}
+
+	.bottom-#{$i * 25} {
+		bottom: #{$i * 25%} !important;
+	}
+
+	.left-#{$i * 25} {
+		left: #{$i * 25%} !important;
+	}
+
+	.right-#{$i * 25} {
+		right: #{$i * 25%} !important;
+	}
+}
+
+@each $key, $val in $grid {
+	@media (width >= #{map-get($val,breakpoint)}) {
+		@for $i from 0 through 4 {
+			.top-#{$key}-#{$i * 25} {
+				top: #{$i * 25%} !important;
+			}
+		
+			.bottom-#{$key}-#{$i * 25} {
+				bottom: #{$i * 25%} !important;
+			}
+		
+			.left-#{$key}-#{$i * 25} {
+				left: #{$i * 25%} !important;
+			}
+		
+			.right-#{$key}-#{$i * 25} {
+				right: #{$i * 25%} !important;
+			}
+		}
+	}
+}
+
+.translate {
+	&-middle {
+		transform: translate(-50%, -50%) !important;
+
+		&-x {
+			transform: translateX(-50%) !important;
+		}
+
+		&-y {
+			transform: translateY(-50%) !important;
+		}
+	}
+
+	@each $key, $val in $grid {
+		@media (width >= #{map-get($val,breakpoint)}) {
+			&-#{$key}-middle {
+				transform: translate(-50%, -50%) !important;
+		
+				&-x {
+					transform: translateX(-50%) !important;
+				}
+		
+				&-y {
+					transform: translateY(-50%) !important;
+				}
+			}
+		}
+	}
+}

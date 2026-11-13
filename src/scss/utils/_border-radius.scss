@@ -1,0 +1,57 @@
+.b-radius {
+	@each $b-key, $b-val in $border-radius {
+		&-#{$b-key} {
+			border-radius: var(--#{$prefix}-border-radius-#{$b-key}) !important;
+		}
+
+		&-top-#{$b-key} {
+			border-top-left-radius: var(--#{$prefix}-border-radius-#{$b-key}) !important;
+			border-top-right-radius: var(--#{$prefix}-border-radius-#{$b-key}) !important;
+		}
+
+		&-bottom-#{$b-key} {
+			border-bottom-left-radius: var(--#{$prefix}-border-radius-#{$b-key}) !important;
+			border-bottom-right-radius: var(--#{$prefix}-border-radius-#{$b-key}) !important;
+		}
+
+		&-left-#{$b-key} {
+			border-top-left-radius: var(--#{$prefix}-border-radius-#{$b-key}) !important;
+			border-bottom-left-radius: var(--#{$prefix}-border-radius-#{$b-key}) !important;
+		}
+
+		&-right-#{$b-key} {
+			border-top-right-radius: var(--#{$prefix}-border-radius-#{$b-key}) !important;
+			border-bottom-right-radius: var(--#{$prefix}-border-radius-#{$b-key}) !important;
+		}
+	}
+
+	@each $g-key, $g-val in $grid {
+		@media (width >= #{map-get($g-val,breakpoint)}) {
+			@each $b-key, $b-val in $border-radius {
+				&-#{$g-key}-#{$b-key} {
+					border-radius: var(--#{$prefix}-border-radius-#{$b-key}) !important;
+				}
+		
+				&-top-#{$g-key}-#{$b-key} {
+					border-top-left-radius: var(--#{$prefix}-border-radius-#{$b-key}) !important;
+					border-top-right-radius: var(--#{$prefix}-border-radius-#{$b-key}) !important;
+				}
+		
+				&-bottom-#{$g-key}-#{$b-key} {
+					border-bottom-left-radius: var(--#{$prefix}-border-radius-#{$b-key}) !important;
+					border-bottom-right-radius: var(--#{$prefix}-border-radius-#{$b-key}) !important;
+				}
+		
+				&-left-#{$g-key}-#{$b-key} {
+					border-top-left-radius: var(--#{$prefix}-border-radius-#{$b-key}) !important;
+					border-bottom-left-radius: var(--#{$prefix}-border-radius-#{$b-key}) !important;
+				}
+		
+				&-right-#{$g-key}-#{$b-key} {
+					border-top-right-radius: var(--#{$prefix}-border-radius-#{$b-key}) !important;
+					border-bottom-right-radius: var(--#{$prefix}-border-radius-#{$b-key}) !important;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,113 @@
+$colors: (
+	surface: (
+		primary: (
+			solid:       (light: hex-rgba(#FFFFFF, map-get($opacity,max)),        dark: hex-rgba(#1A1A1A, map-get($opacity,max))),
+			blur-max:    (light: hex-rgba(#FFFFFF, map-get($opacity,extra-high)), dark: hex-rgba(#1A1A1A, map-get($opacity,extra-high))),
+			blur-hard:   (light: hex-rgba(#FFFFFF, map-get($opacity,high)),       dark: hex-rgba(#1A1A1A, map-get($opacity,high))),
+			blur-medium: (light: hex-rgba(#FFFFFF, map-get($opacity,medium)),     dark: hex-rgba(#1A1A1A, map-get($opacity,medium))),
+			blur-soft:   (light: hex-rgba(#FFFFFF, map-get($opacity,low)),        dark: hex-rgba(#1A1A1A, map-get($opacity,low))),
+			blur-min:    (light: hex-rgba(#FFFFFF, map-get($opacity,extra-low)),  dark: hex-rgba(#1A1A1A, map-get($opacity,extra-low)))
+		),
+		secondary: (
+			solid:       (light: hex-rgba(#E5E5E5, map-get($opacity,max)),        dark: hex-rgba(#333333, map-get($opacity,max))),
+			blur-max:    (light: hex-rgba(#E5E5E5, map-get($opacity,extra-high)), dark: hex-rgba(#333333, map-get($opacity,extra-high))),
+			blur-hard:   (light: hex-rgba(#E5E5E5, map-get($opacity,high)),       dark: hex-rgba(#333333, map-get($opacity,high))),
+			blur-medium: (light: hex-rgba(#E5E5E5, map-get($opacity,medium)),     dark: hex-rgba(#333333, map-get($opacity,medium))),
+			blur-soft:   (light: hex-rgba(#E5E5E5, map-get($opacity,low)),        dark: hex-rgba(#333333, map-get($opacity,low))),
+			blur-min:    (light: hex-rgba(#E5E5E5, map-get($opacity,extra-low)),  dark: hex-rgba(#333333, map-get($opacity,extra-low)))
+		),
+		inverse: (
+			solid:       (light: hex-rgba(#1A1A1A, map-get($opacity,max)),        dark: hex-rgba(#E5E5E5, map-get($opacity,max))),
+			blur-max:    (light: hex-rgba(#1A1A1A, map-get($opacity,extra-high)), dark: hex-rgba(#E5E5E5, map-get($opacity,extra-high))),
+			blur-hard:   (light: hex-rgba(#1A1A1A, map-get($opacity,high)),       dark: hex-rgba(#E5E5E5, map-get($opacity,high))),
+			blur-medium: (light: hex-rgba(#1A1A1A, map-get($opacity,medium)),     dark: hex-rgba(#E5E5E5, map-get($opacity,medium))),
+			blur-soft:   (light: hex-rgba(#1A1A1A, map-get($opacity,low)),        dark: hex-rgba(#E5E5E5, map-get($opacity,low))),
+			blur-min:    (light: hex-rgba(#1A1A1A, map-get($opacity,extra-low)),  dark: hex-rgba(#E5E5E5, map-get($opacity,extra-low)))
+		)
+	),
+	text: (
+		primary: (
+			main:        (light: hex-rgba(#1A1A1A, 1.0), dark: hex-rgba(#E5E5E5, 1.0)),
+			subtitle:    (light: hex-rgba(#1A1A1A, 0.8), dark: hex-rgba(#E5E5E5, 0.8)),
+			label:       (light: hex-rgba(#1A1A1A, 0.6), dark: hex-rgba(#E5E5E5, 0.6)),
+			placeholder: (light: hex-rgba(#1A1A1A, 0.4), dark: hex-rgba(#E5E5E5, 0.4))
+		),
+		inverse: (
+			main:        (light: hex-rgba(#E5E5E5, 1.0), dark: hex-rgba(#1A1A1A, 1.0)),
+			subtitle:    (light: hex-rgba(#E5E5E5, 0.8), dark: hex-rgba(#1A1A1A, 0.8)),
+			label:       (light: hex-rgba(#E5E5E5, 0.6), dark: hex-rgba(#1A1A1A, 0.6)),
+			placeholder: (light: hex-rgba(#E5E5E5, 0.4), dark: hex-rgba(#1A1A1A, 0.4))
+		)
+	),
+	theme: (
+		base: (
+			default:     (light: hex-rgba(#1A1A1A, map-get($opacity,max)),       dark: hex-rgba(#E5E5E5, map-get($opacity,max)), foreground: inverse),
+			hover:       (light: hex-rgba(#0D0D0D, map-get($opacity,max)),       dark: hex-rgba(#D9D9D9, map-get($opacity,max))),
+			active:      (light: hex-rgba(#000000, map-get($opacity,max)),       dark: hex-rgba(#CCCCCC, map-get($opacity,max))),
+			disabled:    (light: hex-rgba(#1A1A1A, map-get($opacity,medium)),    dark: hex-rgba(#E5E5E5, map-get($opacity,medium))),
+			border:      (light: hex-rgba(#1A1A1A, map-get($opacity,low)),       dark: hex-rgba(#E5E5E5, map-get($opacity,low))),
+			tone:        (light: hex-rgba(#1A1A1A, map-get($opacity,extra-low)), dark: hex-rgba(#E5E5E5, map-get($opacity,extra-low))),
+			layer:       (light: hex-rgba(#1A1A1A, map-get($opacity,min)),       dark: hex-rgba(#E5E5E5, map-get($opacity,min))),
+			text:        (light: hex-rgba(#1A1A1A, map-get($opacity,max)),       dark: hex-rgba(#E5E5E5, map-get($opacity,max)))
+		),
+		inverse: (
+			default:     (light: hex-rgba(#E5E5E5, map-get($opacity,max)),       dark: hex-rgba(#1A1A1A, map-get($opacity,max)), foreground: primary),
+			hover:       (light: hex-rgba(#D9D9D9, map-get($opacity,max)),       dark: hex-rgba(#0D0D0D, map-get($opacity,max))),
+			active:      (light: hex-rgba(#CCCCCC, map-get($opacity,max)),       dark: hex-rgba(#000000, map-get($opacity,max))),
+			disabled:    (light: hex-rgba(#E5E5E5, map-get($opacity,medium)),    dark: hex-rgba(#1A1A1A, map-get($opacity,medium))),
+			border:      (light: hex-rgba(#E5E5E5, map-get($opacity,low)),       dark: hex-rgba(#1A1A1A, map-get($opacity,low))),
+			tone:        (light: hex-rgba(#E5E5E5, map-get($opacity,extra-low)), dark: hex-rgba(#1A1A1A, map-get($opacity,extra-low))),
+			layer:       (light: hex-rgba(#E5E5E5, map-get($opacity,min)),       dark: hex-rgba(#1A1A1A, map-get($opacity,min))),
+			text:        (light: hex-rgba(#E5E5E5, map-get($opacity,max)),       dark: hex-rgba(#1A1A1A, map-get($opacity,max)))
+		),
+		primary: (
+			default:     (light: hex-rgba(#FF7040, map-get($opacity,max)),       dark: hex-rgba(#FF7040, map-get($opacity,max)), foreground: black),
+			hover:       (light: hex-rgba(#E5653A, map-get($opacity,max)),       dark: hex-rgba(#E5653A, map-get($opacity,max))),
+			active:      (light: hex-rgba(#CC5A33, map-get($opacity,max)),       dark: hex-rgba(#CC5A33, map-get($opacity,max))),
+			disabled:    (light: hex-rgba(#FF7040, map-get($opacity,medium)),    dark: hex-rgba(#FF7040, map-get($opacity,medium))),
+			border:      (light: hex-rgba(#FF7040, map-get($opacity,low)),       dark: hex-rgba(#FF7040, map-get($opacity,low))),
+			tone:        (light: hex-rgba(#FF7040, map-get($opacity,extra-low)), dark: hex-rgba(#FF7040, map-get($opacity,extra-low))),
+			layer:       (light: hex-rgba(#FF7040, map-get($opacity,min)),       dark: hex-rgba(#FF7040, map-get($opacity,min))),
+			text:        (light: hex-rgba(#CC5A33, map-get($opacity,max)),       dark: hex-rgba(#FFA080, map-get($opacity,max)))
+		),
+		secondary: (
+			default:     (light: hex-rgba(#66CC66, map-get($opacity,max)),       dark: hex-rgba(#66CC66, map-get($opacity,max)), foreground: black),
+			hover:       (light: hex-rgba(#59B259, map-get($opacity,max)),       dark: hex-rgba(#59B259, map-get($opacity,max))),
+			active:      (light: hex-rgba(#4D994D, map-get($opacity,max)),       dark: hex-rgba(#4D994D, map-get($opacity,max))),
+			disabled:    (light: hex-rgba(#66CC66, map-get($opacity,medium)),    dark: hex-rgba(#66CC66, map-get($opacity,medium))),
+			border:      (light: hex-rgba(#66CC66, map-get($opacity,low)),       dark: hex-rgba(#66CC66, map-get($opacity,low))),
+			tone:        (light: hex-rgba(#66CC66, map-get($opacity,extra-low)), dark: hex-rgba(#66CC66, map-get($opacity,extra-low))),
+			layer:       (light: hex-rgba(#66CC66, map-get($opacity,min)),       dark: hex-rgba(#66CC66, map-get($opacity,min))),
+			text:        (light: hex-rgba(#4D994D, map-get($opacity,max)),       dark: hex-rgba(#80FF80, map-get($opacity,max)))
+		),
+		tertiary: (
+			default:     (light: hex-rgba(#4080FF, map-get($opacity,max)),       dark: hex-rgba(#4080FF, map-get($opacity,max)), foreground: black),
+			hover:       (light: hex-rgba(#3A73E5, map-get($opacity,max)),       dark: hex-rgba(#3A73E5, map-get($opacity,max))),
+			active:      (light: hex-rgba(#3366CC, map-get($opacity,max)),       dark: hex-rgba(#3366CC, map-get($opacity,max))),
+			disabled:    (light: hex-rgba(#4080FF, map-get($opacity,medium)),    dark: hex-rgba(#4080FF, map-get($opacity,medium))),
+			border:      (light: hex-rgba(#4080FF, map-get($opacity,low)),       dark: hex-rgba(#4080FF, map-get($opacity,low))),
+			tone:        (light: hex-rgba(#4080FF, map-get($opacity,extra-low)), dark: hex-rgba(#4080FF, map-get($opacity,extra-low))),
+			layer:       (light: hex-rgba(#4080FF, map-get($opacity,min)),       dark: hex-rgba(#4080FF, map-get($opacity,min))),
+			text:        (light: hex-rgba(#3366CC, map-get($opacity,max)),       dark: hex-rgba(#80AAFF, map-get($opacity,max)))
+		),
+		additional: (
+			default:     (light: hex-rgba(#AA80FF, map-get($opacity,max)),       dark: hex-rgba(#AA80FF, map-get($opacity,max)), foreground: black),
+			hover:       (light: hex-rgba(#9973E5, map-get($opacity,max)),       dark: hex-rgba(#9973E5, map-get($opacity,max))),
+			active:      (light: hex-rgba(#8866CC, map-get($opacity,max)),       dark: hex-rgba(#8866CC, map-get($opacity,max))),
+			disabled:    (light: hex-rgba(#AA80FF, map-get($opacity,medium)),    dark: hex-rgba(#AA80FF, map-get($opacity,medium))),
+			border:      (light: hex-rgba(#AA80FF, map-get($opacity,low)),       dark: hex-rgba(#AA80FF, map-get($opacity,low))),
+			tone:        (light: hex-rgba(#AA80FF, map-get($opacity,extra-low)), dark: hex-rgba(#AA80FF, map-get($opacity,extra-low))),
+			layer:       (light: hex-rgba(#AA80FF, map-get($opacity,min)),       dark: hex-rgba(#AA80FF, map-get($opacity,min))),
+			text:        (light: hex-rgba(#8866CC, map-get($opacity,max)),       dark: hex-rgba(#AA80FF, map-get($opacity,max)))
+		)
+	),
+	special: (
+		backdrop: (
+			primary:   (light: hex-rgba(#000000, map-get($opacity,medium)),    dark: hex-rgba(#000000, map-get($opacity,high))),
+			secondary: (light: hex-rgba(#000000, map-get($opacity,low)),       dark: hex-rgba(#000000, map-get($opacity,medium)))
+		),
+		shadow: (
+			primary:   (light: hex-rgba(#000000, map-get($opacity,extra-low)), dark: hex-rgba(#000000, map-get($opacity,medium)))
+		)
+	)
+);

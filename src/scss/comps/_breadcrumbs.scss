@@ -1,0 +1,7 @@
+.breadcrumbs {
+	@include flex(row, var(--#{$prefix}-space-inner-2));
+	align-items: center;
+	flex-wrap: wrap;
+	padding-left: 0;
+	list-style: none;
+}

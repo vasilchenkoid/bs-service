@@ -1,0 +1,101 @@
+.overflow {
+	&-auto {
+		overflow: auto !important;
+	}
+
+	&-hidden {
+		overflow: hidden !important;
+	}
+
+	&-visible {
+		overflow: visible !important;
+	}
+
+	&-scroll {
+		overflow: scroll !important;
+	}
+
+	&-x-auto {
+		overflow-x: auto !important;
+	}
+
+	&-x-hidden {
+		overflow-x: hidden !important;
+	}
+
+	&-x-visible {
+		overflow-x: visible !important;
+	}
+
+	&-x-scroll {
+		overflow-x: scroll !important;
+	}
+
+	&-y-auto {
+		overflow-y: auto !important;
+	}
+
+	&-y-hidden {
+		overflow-y: hidden !important;
+	}
+
+	&-y-visible {
+		overflow-y: visible !important;
+	}
+
+	&-y-scroll {
+		overflow-y: scroll !important;
+	}
+
+	@each $key, $val in $grid {
+		@media (width >= #{map-get($val,breakpoint)}) {
+			&-#{$key}-auto {
+				overflow: auto !important;
+			}
+		
+			&-#{$key}-hidden {
+				overflow: hidden !important;
+			}
+		
+			&-#{$key}-visible {
+				overflow: visible !important;
+			}
+		
+			&-#{$key}-scroll {
+				overflow: scroll !important;
+			}
+		
+			&-x-#{$key}-auto {
+				overflow-x: auto !important;
+			}
+		
+			&-x-#{$key}-hidden {
+				overflow-x: hidden !important;
+			}
+		
+			&-x-#{$key}-visible {
+				overflow-x: visible !important;
+			}
+		
+			&-x-#{$key}-scroll {
+				overflow-x: scroll !important;
+			}
+		
+			&-y-#{$key}-auto {
+				overflow-y: auto !important;
+			}
+		
+			&-y-#{$key}-hidden {
+				overflow-y: hidden !important;
+			}
+		
+			&-y-#{$key}-visible {
+				overflow-y: visible !important;
+			}
+		
+			&-y-#{$key}-scroll {
+				overflow-y: scroll !important;
+			}
+		}
+	}
+}
