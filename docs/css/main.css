@@ -1,0 +1,237 @@
+.page {
+  display: flex;
+  gap: 20px;
+  min-height: 100dvh;
+  padding: 20px;
+}
+.page__main {
+  flex: 8;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  gap: 20px;
+}
+.page__aside {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.page__aside:hover {
+  flex: 5;
+}
+.page-title {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5vw;
+}
+.page-title * {
+  display: block;
+}
+
+.card {
+  flex: 6;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 40px;
+  border-radius: 40px;
+  background-color: var(--bs-color-surface-secondary-solid);
+}
+.card_main {
+  background-color: var(--bs-color-surface-inverse-solid);
+  color: var(--bs-color-text-inverse-main);
+}
+.card_contact {
+  background-color: var(--bs-color-theme-primary-default);
+}
+.card:hover {
+  flex: 7;
+}
+.card > * {
+  z-index: 10;
+}
+.card__actions {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.slider {
+  --item-space: 20px;
+  height: calc(var(--bs-typography-display-h2-size) * var(--bs-typography-display-h2-lh) + var(--item-space) * 2);
+  margin-block: calc(-1 * var(--item-space));
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
+  overflow: hidden;
+}
+.slider__content {
+  animation-name: slider;
+  animation-timing-function: ease-in-out;
+  animation-duration: 12000ms;
+  animation-iteration-count: infinite;
+}
+.slider__item {
+  padding-block: var(--item-space);
+}
+
+.link {
+  text-underline-offset: 12px;
+  cursor: pointer;
+}
+.link .icon {
+  vertical-align: middle;
+  font-size: inherit;
+}
+
+.hero {
+  position: absolute;
+  bottom: 0;
+  right: -10vw;
+  width: 50vw;
+  z-index: 1;
+}
+
+.circle-decoration {
+  position: absolute;
+  top: 0;
+  left: -510px;
+  width: 1000px;
+  height: 1000px;
+  border-radius: 50%;
+  border: 2px solid var(--bs-color-theme-base-layer);
+  z-index: 0;
+  animation-name: circle-pulsation;
+  animation-timing-function: ease-in-out;
+  animation-duration: 6000ms;
+  animation-delay: 2000ms;
+  animation-iteration-count: infinite;
+}
+.circle-decoration::before {
+  content: "";
+  position: absolute;
+  top: 100px;
+  right: 100px;
+  display: block;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  border: 2px solid var(--bs-color-theme-base-layer);
+  animation-name: circle-pulsation;
+  animation-timing-function: ease-in-out;
+  animation-duration: 6000ms;
+  animation-delay: 1000ms;
+  animation-iteration-count: infinite;
+}
+.circle-decoration::after {
+  content: "";
+  position: absolute;
+  top: 200px;
+  right: 200px;
+  display: block;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  border: 2px solid var(--bs-color-theme-base-layer);
+  animation-name: circle-pulsation;
+  animation-timing-function: ease-in-out;
+  animation-duration: 6000ms;
+  animation-delay: 0;
+  animation-iteration-count: infinite;
+}
+.circle-decoration.inverse {
+  left: auto;
+  right: -510px;
+  border-color: var(--bs-color-theme-inverse-tone);
+}
+.circle-decoration.inverse::before {
+  border-color: var(--bs-color-theme-inverse-tone);
+}
+.circle-decoration.inverse::after {
+  border-color: var(--bs-color-theme-inverse-tone);
+}
+
+@-webkit-keyframes circle-pulsation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes circle-pulsation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes slider {
+  0% {
+    transform: translateY(0);
+  }
+  12% {
+    transform: translateY(-20%);
+  }
+  25% {
+    transform: translateY(-40%);
+  }
+  37% {
+    transform: translateY(-60%);
+  }
+  50% {
+    transform: translateY(-80%);
+  }
+  62% {
+    transform: translateY(-60%);
+  }
+  75% {
+    transform: translateY(-40%);
+  }
+  87% {
+    transform: translateY(-20%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes slider {
+  0% {
+    transform: translateY(0);
+  }
+  12% {
+    transform: translateY(-20%);
+  }
+  25% {
+    transform: translateY(-40%);
+  }
+  37% {
+    transform: translateY(-60%);
+  }
+  50% {
+    transform: translateY(-80%);
+  }
+  62% {
+    transform: translateY(-60%);
+  }
+  75% {
+    transform: translateY(-40%);
+  }
+  87% {
+    transform: translateY(-20%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/*# sourceMappingURL=main.css.map */

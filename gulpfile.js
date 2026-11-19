@@ -122,7 +122,7 @@ async function img() {
 function fonts() {
     return gulp
         .src(path.src.fonts, {encoding:false}) // выбор файлов, отключение кодировки
-        .pipe(ttf2woff()) // преобразование шрифтов
+        .pipe(ttf2woff2()) // преобразование шрифтов
         .pipe(gulp.dest(path.build.fonts)) // перенос в сборку
         .pipe(gulp.src('./src/fonts/**/*.woff')) // выбор woff
         .pipe(gulp.dest(path.build.fonts)) // перенос в сборку

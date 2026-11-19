@@ -8,7 +8,7 @@
 
 `gulp dev` to build and start local server
 
-`npx stylelint "**/lorvin.css"` to check CSS errors
+`npx stylelint "**/bs-service.css"` to check CSS errors
 
 Change anything in folder `config`
 
