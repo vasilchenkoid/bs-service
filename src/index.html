@@ -10,76 +10,120 @@
 </head>
 <body class="page">
 	<main class="page__main">
-		<div class="card card_main">
-			<h1 class="page-title">
-				<span class="text-style-display-h1-bolder">Дизайн </span>
 
-				<span class="slider">
-					<span class="slider__content">
-						<span class="slider__item text-style-display-h2-bolder">
-							<span>веб-сайтов</span>
-							<span class="visually-hidden">, </span>
-						</span>
-						<span class="slider__item text-style-display-h2-bolder">
-							<span>приложений</span>
-							<span class="visually-hidden">, </span>
-						</span>
-						<span class="slider__item text-style-display-h2-bolder">
-							<span>веб-платформ</span>
-							<span class="visually-hidden">, </span>
-						</span>
-						<span class="slider__item text-style-display-h2-bolder">
-							<span>админок</span>
-							<span class="visually-hidden">, </span>
-						</span>
-						<span class="slider__item text-style-display-h2-bolder">
-							<span>дашбордов</span>
+		<div class="card card_main">
+			<div class="card__content">
+				<h1 class="page-title">
+					<span class="text-style-display-h1-bolder">Дизайн </span>
+
+					<span class="slider">
+						<span class="slider__content">
+							<span class="slider__item text-style-display-h2-bolder">
+								<span>веб-сайтов</span>
+								<span class="visually-hidden">, </span>
+							</span>
+							<span class="slider__item text-style-display-h2-bolder">
+								<span>приложений</span>
+								<span class="visually-hidden">, </span>
+							</span>
+							<span class="slider__item text-style-display-h2-bolder">
+								<span>веб-платформ</span>
+								<span class="visually-hidden">, </span>
+							</span>
+							<span class="slider__item text-style-display-h2-bolder">
+								<span>админок</span>
+								<span class="visually-hidden">, </span>
+							</span>
+							<span class="slider__item text-style-display-h2-bolder">
+								<span>дашбордов</span>
+							</span>
 						</span>
 					</span>
-				</span>
-			</h1>
+				</h1>
 
-			<div class="card__actions">
-				<div class="link text-style-display-h4">
-					<span>Что можем сделать</span>
-					<i class="icon">arrow_outward</i>
+				<div class="card__actions">
+					<div class="link text-style-display-h4" id="open-services">
+						<span>Что можем сделать</span>
+						<i class="icon">arrow_outward</i>
+					</div>
+				</div>
+
+				<img class="hero" src="img/hero-design.png" />
+			</div>
+
+			<div class="card__content card__content_hidden">
+				<div class="card__header">
+					<div class="text-style-display-h4">
+						<span>Что можем сделать</span>
+					</div>
+
+					<div class="link text-style-display-h4" id="close-services">
+						<i class="icon">close</i>
+					</div>
+				</div>
+
+				<div class="card__body">
+					Скоро здесь будет перечень услуг
 				</div>
 			</div>
 
-			<img class="hero" src="img/hero-design.png" />
-			
 			<div class="circle-decoration inverse"></div>
 		</div>
+
 	</main>
 
 	<aside class="page__aside">
+
 		<div class="card card_cases">
-			<h2 class="text-style-display-h3-bolder">Посмотреть <br>портфолио</h2>
-			
-			<div class="card__actions">
-				<div class="link text-style-display-h4">
-					<span>Примеры работ</span>
-					<i class="icon">arrow_outward</i>
+			<div class="card__content">
+				<h2 class="text-style-display-h3-bolder">Посмотреть <br>портфолио</h2>
+
+				<div class="card__actions">
+					<div class="link text-style-display-h4" id="open-cases">
+						<span>Примеры работ</span>
+						<i class="icon">arrow_outward</i>
+					</div>
 				</div>
 			</div>
-			
+
+			<!-- <div class="card__content card__content_hidden">
+				<div class="card__header">
+					<div class="text-style-display-h4">
+						<span>Работы</span>
+					</div>
+
+					<div class="link text-style-display-h4" id="close-cases">
+						<i class="icon">close</i>
+					</div>
+				</div>
+
+				<div class="card__body">
+					Скоро здесь будут примеры работ
+				</div>
+			</div> -->
+
 			<div class="circle-decoration"></div>
 		</div>
 
 		<div class="card card_contact">
-			<h2 class="text-style-display-h3-bolder">Оставить <br>заявку</h2>
+			<div class="card__content">
+				<h2 class="text-style-display-h3-bolder">Оставить <br>заявку</h2>
 
-			<div class="card__actions">
-				<a class="link text-style-display-h4" href="https://t.me/vasilchenkoid">
-					<span>Telegram</span>
-					<i class="icon">arrow_outward</i>
-				</a>
-				<a class="link text-style-display-h4" href="https://vk.me/vasilchenko_id">
-					<span>VK</span>
-					<i class="icon">arrow_outward</i>
-				</a>
+				<div class="card__actions">
+					<a class="link text-style-display-h4" href="https://t.me/vasilchenkoid">
+						<span>Telegram</span>
+						<i class="icon">arrow_outward</i>
+					</a>
+					<a class="link text-style-display-h4" href="https://vk.me/vasilchenko_id">
+						<span>VK</span>
+						<i class="icon">arrow_outward</i>
+					</a>
+				</div>
 			</div>
 		</div>
+
 	</aside>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
