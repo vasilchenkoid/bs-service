@@ -4,25 +4,24 @@ const linkCloseServices = document.getElementById('close-services')
 const linkOpenCases = document.getElementById('open-cases')
 const linkCloseCases = document.getElementById('close-cases')
 
-const cardMain = document.querySelector('.card_main')
-const cardCases = document.querySelector('.card_cases')
+const page = document.querySelector('.page')
 
 linkOpenServices.addEventListener('click', () => {
-    if (!cardMain.classList.contains('card_main__expanded'))
-        cardMain.classList.add('card_main__expanded')
+    if (!page.classList.contains('page_state_services'))
+        page.classList.add('page_state_services')
 })
 
 linkCloseServices.addEventListener('click', () => {
-    if (cardMain.classList.contains('card_main__expanded'))
-        cardMain.classList.remove('card_main__expanded')
+    if (page.classList.contains('page_state_services'))
+        page.classList.remove('page_state_services')
 })
 
 linkOpenCases.addEventListener('click', () => {
-    if (!cardCases.classList.contains('card_cases__expanded'))
-        cardCases.classList.add('card_cases__expanded')
+    if (!page.classList.contains('page_state_portfolio'))
+        page.classList.add('page_state_portfolio')
 })
 
 linkCloseCases.addEventListener('click', () => {
-    if (cardCases.classList.contains('card_cases__expanded'))
-        cardCases.classList.remove('card_cases__expanded')
+    if (page.classList.contains('page_state_portfolio'))
+        page.classList.remove('page_state_portfolio')
 })
