@@ -3,18 +3,28 @@
     gap: 20px;
     min-height: 100dvh;
     padding: 20px;
-    overflow: hidden;
+
+    @media (width < 1000px) {
+		flex-direction: column;
+	}
 
     &__main {
-        flex: 8;
         display: flex;
-        flex-direction: column;
         gap: 20px;
         min-width: 0;
+        min-height: calc(50vw / 1.2 + 40px);
         transition-property: flex, display;
         transition-duration: var(--bs-motion-duration-medium);
         transition-timing-function: ease-in-out;
-    	transition-behavior: allow-discrete;
+        transition-behavior: allow-discrete;
+
+        @media (width < 1000px) {
+            flex: 1 1 0;
+        }
+
+        @media (width >= 1000px) {
+            flex: 8;
+        }
 
         @starting-style {
             flex: 0;
@@ -27,14 +37,29 @@
     }
 
     &__aside {
-        flex: 4;
         display: flex;
-        flex-direction: column;
         gap: 20px;
         min-width: 0;
 
-        &:hover {
-            flex: 5;
+        @media (width >= 1000px) {
+            flex: 4;
+            flex-direction: column;
+        }
+
+        @media (prefers-reduced-motion: no-preference) and (width >= 1000px) {
+            &:hover {
+                flex: 5;
+            }
+        }
+
+        > * {
+            flex: 6;
+
+            @media (prefers-reduced-motion: no-preference) {
+                &:hover {
+                    flex: 7;
+                }
+            }
         }
     }
 
@@ -50,15 +75,11 @@
 }
 
 .card {
-    flex: 6;
     position: relative;
+    min-width: 0;
     border-radius: 40px;
     background-color: var(--bs-color-surface-secondary-solid);
     overflow: hidden;
-
-    &:hover {
-        flex: 7;
-    }
 
     &_main {
         background-color: var(--bs-color-surface-inverse-solid);
@@ -88,11 +109,10 @@
     }
 
     &_contact {
-        background-color: var(--bs-color-theme-primary-default);
         transition-property: flex, display;
         transition-duration: var(--bs-motion-duration-medium);
         transition-timing-function: ease-in-out;
-    	transition-behavior: allow-discrete;
+        transition-behavior: allow-discrete;
 
         @starting-style {
             flex: 0;
@@ -104,7 +124,7 @@
         }
     }
 
-    & * {
+    * {
         z-index: 10;
     }
 
@@ -172,8 +192,10 @@
         font-size: inherit;
     }
 
-    &:hover .icon {
-        transform: translate(10%, -10%);
+    @media (prefers-reduced-motion: no-preference) {
+        &:hover .icon {
+            transform: translate(10%, -10%);
+        }
     }
 }
 
@@ -195,11 +217,13 @@
     border: 2px solid var(--bs-color-theme-base-layer);
     z-index: 0;
 
-    animation-name: circle-pulsation;
-    animation-timing-function: ease-in-out;
-    animation-duration: 6000ms;
-    animation-delay: 2000ms;
-    animation-iteration-count: infinite;
+    @media (prefers-reduced-motion: no-preference) {
+        animation-name: circle-pulsation;
+        animation-timing-function: ease-in-out;
+        animation-duration: 6000ms;
+        animation-delay: 2000ms;
+        animation-iteration-count: infinite;
+    }
 
     &::before {
         content: '';
@@ -212,11 +236,13 @@
         border-radius: 50%;
         border: 2px solid var(--bs-color-theme-base-layer);
 
-        animation-name: circle-pulsation;
-        animation-timing-function: ease-in-out;
-        animation-duration: 6000ms;
-        animation-delay: 1000ms;
-        animation-iteration-count: infinite;
+        @media (prefers-reduced-motion: no-preference) {
+            animation-name: circle-pulsation;
+            animation-timing-function: ease-in-out;
+            animation-duration: 6000ms;
+            animation-delay: 1000ms;
+            animation-iteration-count: infinite;
+        }
     }
 
     &::after {
@@ -230,11 +256,13 @@
         border-radius: 50%;
         border: 2px solid var(--bs-color-theme-base-layer);
 
-        animation-name: circle-pulsation;
-        animation-timing-function: ease-in-out;
-        animation-duration: 6000ms;
-        animation-delay: 0;
-        animation-iteration-count: infinite;
+        @media (prefers-reduced-motion: no-preference) {
+            animation-name: circle-pulsation;
+            animation-timing-function: ease-in-out;
+            animation-duration: 6000ms;
+            animation-delay: 0;
+            animation-iteration-count: infinite;
+        }
     }
 
     &.inverse {
