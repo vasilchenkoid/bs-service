@@ -375,9 +375,9 @@
   --bs-typography-display-h4-lh: 1;
   --bs-typography-display-h3-size: clamp(2rem, 4vw, 5rem);
   --bs-typography-display-h3-lh: 1;
-  --bs-typography-display-h2-size: clamp(2.5rem, 5vw, 6rem);
+  --bs-typography-display-h2-size: clamp(2rem, 5vw, 6rem);
   --bs-typography-display-h2-lh: 1;
-  --bs-typography-display-h1-size: clamp(5rem, 10vw, 12rem);
+  --bs-typography-display-h1-size: clamp(4rem, 10vw, 12rem);
   --bs-typography-display-h1-lh: 1;
   --bs-typography-code-font: 'Roboto Mono', SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --bs-typography-code-weight: 400;
