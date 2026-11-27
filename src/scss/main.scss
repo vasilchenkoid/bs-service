@@ -28,7 +28,7 @@
         gap: var(--page-space);
         min-width: 0;
         min-height: calc(50vw / 1.2 + var(--card-space));
-        transition-property: flex, display;
+        transition-property: flex-grow, display, min-height;
         transition-duration: var(--bs-motion-duration-medium);
         transition-timing-function: ease-in-out;
         transition-behavior: allow-discrete;
@@ -46,13 +46,15 @@
         }
 
         @starting-style {
-            flex: 0;
+            flex-grow: 0;
+            min-height: 0;
         }
     }
 
     &_state_portfolio &__main {
-        flex: 0;
+        flex-grow: 0;
         display: none;
+        min-height: 0;
     }
 
     &__aside {
@@ -76,14 +78,19 @@
         }
 
         > * {
-            flex: 6;
+            flex: 6 1 0;
+            min-height: fit-content;
 
             @media (prefers-reduced-motion: no-preference) {
                 &:hover {
-                    flex: 7;
+                    flex: 7 1 0;
                 }
             }
         }
+    }
+
+    &_state_portfolio &__aside {
+        flex: 1;
     }
 
     &-title {
@@ -104,7 +111,7 @@
     background-color: var(--bs-color-surface-secondary-solid);
     overflow: hidden;
 
-    &_main {
+    &_type_main {
         background-color: var(--bs-color-surface-inverse-solid);
         color: var(--bs-color-text-inverse-main);
 
@@ -119,7 +126,7 @@
         }
     }
 
-    &_cases {
+    &_type_cases {
         display: flex;
 
         .card__content {
@@ -131,19 +138,21 @@
         }
     }
 
-    &_contact {
-        transition-property: flex, display;
+    &_type_contact {
+        transition-property: flex-grow, display, min-height;
         transition-duration: var(--bs-motion-duration-medium);
         transition-timing-function: ease-in-out;
         transition-behavior: allow-discrete;
 
         @starting-style {
-            flex: 0;
+            flex-grow: 0;
+            min-height: 0;
         }
 
         .page_state_portfolio & {
-            flex: 0;
+            flex-grow: 0;
             display: none;
+            min-height: 0;
         }
     }
 

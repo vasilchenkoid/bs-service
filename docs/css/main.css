@@ -31,7 +31,7 @@
   gap: var(--page-space);
   min-width: 0;
   min-height: calc(41.6666666667vw + var(--card-space));
-  transition-property: flex, display;
+  transition-property: flex-grow, display, min-height;
   transition-duration: var(--bs-motion-duration-medium);
   transition-timing-function: ease-in-out;
   transition-behavior: allow-discrete;
@@ -53,12 +53,14 @@
 }
 @starting-style {
   .page__main {
-    flex: 0;
+    flex-grow: 0;
+    min-height: 0;
   }
 }
 .page_state_portfolio .page__main {
-  flex: 0;
+  flex-grow: 0;
   display: none;
+  min-height: 0;
 }
 .page__aside {
   display: flex;
@@ -82,12 +84,16 @@
   }
 }
 .page__aside > * {
-  flex: 6;
+  flex: 6 1 0;
+  min-height: fit-content;
 }
 @media (prefers-reduced-motion: no-preference) {
   .page__aside > *:hover {
-    flex: 7;
+    flex: 7 1 0;
   }
+}
+.page_state_portfolio .page__aside {
+  flex: 1;
 }
 .page-title {
   display: flex;
@@ -105,39 +111,41 @@
   background-color: var(--bs-color-surface-secondary-solid);
   overflow: hidden;
 }
-.card_main {
+.card_type_main {
   background-color: var(--bs-color-surface-inverse-solid);
   color: var(--bs-color-text-inverse-main);
 }
-.page_state_services .card_main .card__content {
+.page_state_services .card_type_main .card__content {
   transform: translateY(-100%);
 }
-.page_state_services .card_main .hero {
+.page_state_services .card_type_main .hero {
   transform: translateX(100%);
 }
-.card_cases {
+.card_type_cases {
   display: flex;
 }
-.card_cases .card__content {
+.card_type_cases .card__content {
   transform: translateX(-100%);
 }
-.page_state_portfolio .card_cases .card__content {
+.page_state_portfolio .card_type_cases .card__content {
   transform: translateX(0);
 }
-.card_contact {
-  transition-property: flex, display;
+.card_type_contact {
+  transition-property: flex-grow, display, min-height;
   transition-duration: var(--bs-motion-duration-medium);
   transition-timing-function: ease-in-out;
   transition-behavior: allow-discrete;
 }
 @starting-style {
-  .card_contact {
-    flex: 0;
+  .card_type_contact {
+    flex-grow: 0;
+    min-height: 0;
   }
 }
-.page_state_portfolio .card_contact {
-  flex: 0;
+.page_state_portfolio .card_type_contact {
+  flex-grow: 0;
   display: none;
+  min-height: 0;
 }
 .card * {
   z-index: 10;
